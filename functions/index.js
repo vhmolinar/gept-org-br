@@ -144,3 +144,34 @@ exports.saveContactMessage = onRequest({ region: "us-east1", cors: true }, async
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
+
+// WhatsApp Business API Webhook
+exports.whatsappWebhook = onRequest({ region: "us-east1" }, (req, res) => {
+    if (req.method === "GET") {
+        // This token must match the one you configure in the Meta App Dashboard
+        const VERIFY_TOKEN = process.env.WHATSAPP_VERIFY_TOKEN || "gept_whatsapp_verify_token_2026";
+        
+        const mode = req.query["hub.mode"];
+        const token = req.query["hub.verify_token"];
+        const challenge = req.query["hub.challenge"];
+
+        if (mode && token) {
+            if (mode === "subscribe" && token === VERIFY_TOKEN) {
+                console.log("WhatsApp Webhook verified!");
+                res.status(200).send(challenge);
+            } else {
+                console.warn("WhatsApp Webhook verification failed. Token mismatch.");
+                res.sendStatus(403);
+            }
+        } else {
+            res.sendStatus(400);
+        }
+    } else if (req.method === "POST") {
+        // Handle incoming WhatsApp messages/status updates here in the future
+        const body = req.body;
+        console.log("Incoming WhatsApp Webhook:", JSON.stringify(body, null, 2));
+        res.sendStatus(200);
+    } else {
+        res.status(405).send("Method Not Allowed");
+    }
+});
