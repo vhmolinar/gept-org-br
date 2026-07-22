@@ -9,3 +9,5 @@ firebase-debug.log
 firebase-debug.*.log
 app/.astro/
 app/dist/
+app/playwright-report/
+app/test-results/

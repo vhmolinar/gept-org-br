@@ -1,138 +1,94 @@
-# Site Audit & Reconstruction Package - Grupo Espírita Paulo de Tarso (GEPT)
+# Grupo Espírita Paulo de Tarso (GEPT) - Website
 
-This repository contains the complete content extraction, site map, design tokens, media catalog, form schemas, and structural analysis of the **Grupo Espírita Paulo de Tarso (GEPT)** website ([https://gept.org.br](https://gept.org.br)), located in Uberlândia / MG, Brazil.
+Este é o repositório oficial do website do **Grupo Espírita Paulo de Tarso (GEPT)**, localizado em Uberlândia / MG.
 
-All extracted data is stored in a self-contained format inside the `current-state/` directory so that a developer or automated agent can rebuild the website from scratch without needing further web research.
-
----
-
-## 🕊️ Overview of the Institution & Website Purpose
-
-### 1. Purpose of the Website & Institution
-The **Grupo Espírita Paulo de Tarso (GEPT)** is a Spiritist institution (*Casa Espírita*) in Uberlândia/MG dedicated to the study, practice, and dissemination of Spiritism (*Doutrina Espírita*) based on the Codification by Allan Kardec and the works of Chico Xavier, André Luiz, Auta de Souza, and Emmanuel.
-
-The primary purpose of the website is to serve as an accessible, welcoming digital front door for:
-- **Welcoming people seeking spiritual help, comfort, or guidance.**
-- **Publishing weekly schedules for public lectures, spiritual treatments, and study groups.**
-- **Enrolling children, youth, and adults in spiritist education and mediumship courses.**
-- **Mobilizing volunteers and donations for social charity campaigns.**
-- **Providing direct remote access (Zoom/Online)** to meetings and distant spiritual care.
+O site foi completamente reconstruído utilizando tecnologias modernas para oferecer uma experiência rápida, acessível e esteticamente agradável aos usuários que buscam informações sobre a Casa Espírita, suas atividades, cursos, campanhas de caridade e opções de contato.
 
 ---
 
-### 2. Core Content & Areas Covered
+## 🛠️ Stack Tecnológico
 
-The website is structured around five core pillars:
+O projeto foi desenvolvido com foco em alta performance e escalabilidade, utilizando as seguintes tecnologias:
 
-#### A. Institutos (Departments & Specialized Institutes)
-- **Instituto da Caridade**: Coordinates social assistance, aid for vulnerable families, food/clothing distribution, and fraternal campaigns (*Auta de Souza*, *Chico Xavier*, *Madre Tereza de Calcutá*).
-- **Instituto da Criança**: Manages *Evangelização Infantil* (spiritist moral education for children from early childhood onwards).
-- **Instituto do Jovem**: Operates *Mocidade Espírita* (dynamic youth group for ages 12+ covering ethics, spirituality, and social bonding).
-- **Instituto da Divulgação**: Handles Spiritist book sales/lending, library management, digital media, and doctrine dissemination.
-- **Instituto do Esclarecimento e Família**: Offers guidance, family orientation, study circles, and doctrine foundation courses.
-- **Instituto da Mediunidade**: Runs the *Escola de Médiuns* (mediumship education based on Kardec and André Luiz) and coordinates mediumistic support in spiritual treatment rooms.
-
-#### B. Atividades & Cronograma Semanal (Activities & Schedules)
-- **Segunda-feira (19h45)**: *Triagem Fraterna* — Welcoming and orientation for individuals seeking spiritual treatment or joining house activities.
-- **Terça-feira (19h45)**: *Reunião Pública (Presencial e Online)* — Open lectures, prayers, collective vibrations, and magnetic passes (*auxílio magnético*).
-- **Quarta-feira (19h45)**: *Tratamento Espiritual & Escola de Médiuns* — Scheduled spiritual treatment sessions and mediumship study classes.
-- **Domingo (09h00 - 09h30)**: *Campanha Auta de Souza* (door-to-door food/clothes drive & messages of comfort) & *Mocidade Espírita*.
-- **Sábado**: *Tratamento Infantil* (08h15), *Mocidade Espírita* (09h00), *Evangelização Infantil* (09h15), *Campanha Chico Xavier* (09h30 - book lending), and *Global Kardec* (17h15).
-
-#### C. Special Campaigns & Social Projects
-- **Campanha Madre Tereza de Calcutá ("Em Defesa da Vida")**: Support for pregnant women, mothers, and protection of life.
-- **EFAS (Encontro Fraterno Auta de Souza)**: Regional spiritist gathering, fraternal training, and solidarity registration.
-- **Escola CEEB**: Spiritist educational institution registration.
-- **Rota Nacional Paulo de Tarso**: Educational and doctrinal thematic route.
-- **Projeto Energia Limpa**: Institutional sustainability initiative.
-
-#### D. Digital & Remote Services
-- Dedicated Zoom rooms (*Conexão Zoom - Tratamento* & *Conexão Zoom - Cursos*).
-- Online Public Meeting streaming links and archives.
-- Forms for *Tratamento à Distância* (remote spiritual treatment requests).
+- **Frontend:** [Astro](https://astro.build/) - Framework web ultra-rápido focado na entrega de conteúdo estático e interativo apenas quando necessário.
+- **Estilização:** [Tailwind CSS](https://tailwindcss.com/) - Framework CSS utilitário para um design moderno, fluido e responsivo (utilizando paleta de cores institucional, *glassmorphism* e micro-animações).
+- **Backend & Cloud:** [Firebase](https://firebase.google.com/)
+  - **Hosting:** Hospedagem global rápida e segura para os arquivos estáticos gerados pelo Astro.
+  - **Cloud Functions:** (Node.js) Funções serverless para processamento de formulários.
+  - **Firestore:** Banco de dados NoSQL para armazenamento seguro de contatos, inscrições em cursos e engajamento em campanhas.
 
 ---
 
-### 3. What the Site Communicates to the Audience
+## 🚀 Funcionalidades e Estrutura
 
-- **Fraternity & Accessibility**: Communicates a warm, open invitation to anyone regardless of religious background, emphasizing that all activities and spiritual treatments are free of charge.
-- **Clarity & Transparency**: Clearly details when and how to attend meetings, how spiritual treatments work (starting with *Triagem Fraterna* on Mondays), and how to register children for evangelization.
-- **Active Social Responsibility**: Highlights active volunteer campaigns, encouraging community involvement in food drives, book lending, and helping families in need.
-- **Continuity & Digital Inclusion**: Ensures that individuals who cannot attend physically can participate through online public meetings and remote spiritual treatment via Zoom.
+- **Institucional:** Páginas dedicadas aos Institutos da casa (Caridade, Criança, Jovem, Divulgação, Esclarecimento e Mediunidade).
+- **Cursos de Espiritismo:** Formulário dinâmico de inscrição para novos alunos (`/cursos-espiritismo`).
+- **Campanhas de Fraternidade:** Páginas de engajamento e formulários de cadastro de voluntários para as campanhas *Auta de Souza*, *Chico Xavier* e *Madre Tereza*.
+- **Contato:** Página dedicada (`/contato`) com validação de formulário em tempo real e captura de mensagens integrada diretamente com o Firestore.
+- **Atividades:** Cronograma completo das reuniões públicas (presenciais e online) e de tratamentos espirituais.
 
 ---
 
-## 📁 `current-state/` Directory Overview
+## 💻 Como Rodar o Projeto Localmente
 
+### Pré-requisitos
+- Node.js (versão 20+)
+- Firebase CLI instalado globalmente (`npm install -g firebase-tools`)
+
+### 1. Frontend (Astro)
+
+```bash
+# Entre na pasta do frontend
+cd app
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
+npm run dev
 ```
-geptorgbr/
-├── README.md                          <-- You are here (Master overview)
-└── current-state/                     <-- Self-contained snapshot & documentation
-    ├── SITE_MAP.md                    <-- Visual map, taxonomy, header menu & 59 route catalog
-    ├── DESIGN_AND_STRUCTURE.md        <-- Design tokens, CSS variables, typography & UI components
-    ├── MEDIA_AND_RESOURCES.md         <-- Logos, image catalog, form schemas & external links
-    ├── PAGES/                         <-- 58 markdown files with full page contents
-    │   ├── 01_home.md
-    │   ├── 02_instituto_da_mediunidade.md
-    │   ├── 04_instituto_do_esclarecimento_e_familia.md
-    │   ├── 06_instituto_da_divulgacao.md
-    │   ├── 08_efas.md
-    │   ├── 12_reuniao_publica.md
-    │   ├── 13_instituto_do_jovem.md
-    │   ├── 19_instituto_da_caridade.md
-    │   ├── 25_campanha_madre_tereza_de_calcuta.md
-    │   ├── 34_instituto_da_crianca.md
-    │   ├── 36_reuniao_publica_online.md
-    │   └── ... (all 58 pages mapped)
-    ├── data/
-    │   └── crawled_site_data.json     <-- Raw & structured JSON dataset (WP API + Live Crawl)
-    ├── extract_site.py                <-- Python web crawler & REST API scraper
-    └── generate_documentation.py      <-- Markdown & JSON generator script
+O site estará disponível em `http://localhost:4321`.
+
+### 2. Backend (Firebase Functions)
+
+```bash
+# Entre na pasta de funções
+cd functions
+
+# Instale as dependências
+npm install
+
+# (Opcional) Inicie o emulador do Firebase para testar as funções localmente
+firebase emulators:start
 ```
 
 ---
 
-## 📄 File Details & Usage Guide for Reconstruction Agents
+## 📦 Deploy para Produção
 
-### 1. [`current-state/SITE_MAP.md`](file:///data/dev/src/geptorgbr/current-state/SITE_MAP.md)
-- **Purpose**: Defines the site structure, page routing, and navigation hierarchy.
-- **Key Sections**:
-  - **Header Navigation**: Primary menu items and nested dropdowns.
-  - **Route Catalog**: Complete table of 59 URLs/slugs, WordPress page IDs, page titles, purpose/role, and menu status.
-  - **Hierarchy Tree**: Complete content tree from Home down to Institutes, Activities, Events, Projects, and Zoom Room redirects.
+O processo de deploy envolve a compilação (*build*) do site estático e o envio das novas funções e arquivos para o Firebase.
 
-### 2. [`current-state/DESIGN_AND_STRUCTURE.md`](file:///data/dev/src/geptorgbr/current-state/DESIGN_AND_STRUCTURE.md)
-- **Purpose**: Specs for building the new UI/UX, CSS design tokens, and components.
-- **Key Sections**:
-  - **Color Palette & CSS Variables**: Hex values for headers, accents, backgrounds, text muted colors, and preset variables (`--wp--preset--color--*`).
-  - **Typography**: Font families (`Roboto`, `Roboto Slab`, `Lato`), font sizes, and line height rules.
-  - **UI Component Specs**: Banner carousels, weekly schedule tabbed widgets (Domingo to Sábado), card grids, and responsive containers.
-  - **Layout Specs**: Topbar header, logo placement, main menu, and footer layout.
+Para realizar um deploy completo (Frontend + Backend), execute na raiz do projeto:
 
-### 3. [`current-state/MEDIA_AND_RESOURCES.md`](file:///data/dev/src/geptorgbr/current-state/MEDIA_AND_RESOURCES.md)
-- **Purpose**: Asset management and third-party integrations.
-- **Key Sections**:
-  - **Image Catalog**: Image URLs, alt attributes, and usage locations.
-  - **Form Schemas**: Action URLs, submit methods, input names, input types, and labels for all interactive forms.
-  - **External Links & Integrations**: Zoom virtual room links, YouTube channels, WhatsApp links, and Google Forms.
+```bash
+# 1. Faça o deploy das Funções
+firebase deploy --only functions
 
-### 4. [`current-state/PAGES/`](file:///data/dev/src/geptorgbr/current-state/PAGES/)
-- **Purpose**: Full extracted text and structure for every page on the site.
-- **Each file includes**:
-  - Page title, original URL, slug, meta description.
-  - Interactive element extractions (Sliders, Accordion tabs, custom widgets).
-  - Main body text in clean Markdown format.
-  - Embedded image references and form field specifications.
+# 2. Construa a versão otimizada do Frontend
+cd app
+npm run build
+cd ..
 
-### 5. [`current-state/data/crawled_site_data.json`](file:///data/dev/src/geptorgbr/current-state/data/crawled_site_data.json)
-- **Purpose**: Machine-readable master JSON dataset containing raw WordPress REST API payloads (pages, media library, categories, tags) and parsed live crawl outputs. Useful for programmatic ingestion by code generators or CMS migration tools.
+# 3. Faça o deploy do Hosting
+firebase deploy --only hosting
+```
+
+A URL de produção é: **[https://gept-org-br.web.app](https://gept-org-br.web.app)** (e domínios customizados configurados).
 
 ---
 
-## 🚀 Recommended Rebuilding Instructions
+## 📁 Estrutura de Diretórios
 
-When initiating the rebuild with a site generator agent:
-1. Parse [`SITE_MAP.md`](file:///data/dev/src/geptorgbr/current-state/SITE_MAP.md) to initialize router/navigation links.
-2. Read [`DESIGN_AND_STRUCTURE.md`](file:///data/dev/src/geptorgbr/current-state/DESIGN_AND_STRUCTURE.md) to set up CSS variables, theme config, and base layout components (Header, Topbar, Footer, Tabs, Carousels).
-3. Populate each page route using the corresponding document inside [`PAGES/`](file:///data/dev/src/geptorgbr/current-state/PAGES/).
-4. Wire up forms and external Zoom/YouTube integrations as specified in [`MEDIA_AND_RESOURCES.md`](file:///data/dev/src/geptorgbr/current-state/MEDIA_AND_RESOURCES.md).
+- `/app/` - Código-fonte do frontend Astro (páginas, componentes, layouts e assets públicos).
+- `/functions/` - Código do backend em Node.js contendo as regras e validações das Firebase Cloud Functions (`saveCourseLead`, `saveCampaignLeads`, `saveContactMessage`).
+- `/current-state/` - Diretório legado contendo o mapeamento e extração do site antigo em WordPress (utilizado para consulta de conteúdo, imagens e estrutura originais).

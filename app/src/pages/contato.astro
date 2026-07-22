@@ -1,0 +1,175 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contato">
+    <section class="py-24 px-4 bg-gray-50 min-h-screen relative overflow-hidden flex items-center">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 z-0 bg-brand-blue opacity-5"></div>
+        <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-brand-blue rounded-full opacity-10 blur-3xl"></div>
+        <div class="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-brand-blue rounded-full opacity-10 blur-3xl"></div>
+        
+        <div class="max-w-6xl mx-auto relative z-10 w-full">
+            <div class="grid lg:grid-cols-5 gap-12 lg:gap-20 items-center">
+                
+                <!-- Support Text Section -->
+                <div class="lg:col-span-2 space-y-8">
+                    <div class="inline-flex items-center justify-center p-3 bg-blue-100 text-brand-blue rounded-2xl mb-2 shadow-sm">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">Contato</h1>
+                    <p class="text-xl text-gray-600 leading-relaxed">
+                        Obrigado por entrar em contato! Deixe sua mensagem e te responderemos o mais rápido possível.
+                    </p>
+                    
+                    <div class="pt-6 space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 p-3 bg-white rounded-xl shadow-sm text-brand-blue">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800">Endereço</h3>
+                                <p class="text-gray-600">Av. Mário Nunes, 174<br>Pres. Roosevelt - Uberlândia/MG</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-3">
+                    <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl shadow-gray-200/50 border border-gray-100 relative w-full">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-blue/5 rounded-bl-full rounded-tr-3xl"></div>
+                        <h2 class="text-2xl font-bold mb-8 text-gray-800 text-center relative z-10">Preencha os dados abaixo</h2>
+                        
+                        <form id="contact-form" class="space-y-6 relative z-10">
+                            <div>
+                                <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Nome Completo</label>
+                                <input type="text" id="name" name="name" required minlength="3" class="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue transition-all outline-none text-gray-700 placeholder-gray-400 bg-gray-50 focus:bg-white shadow-inner" placeholder="Digite aqui seu nome">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-3">Receber resposta por:</label>
+                                <div class="flex gap-6">
+                                    <label class="flex items-center gap-2 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center">
+                                            <input type="radio" name="reply_preference" value="WhatsApp" checked class="peer sr-only">
+                                            <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-brand-blue peer-checked:bg-brand-blue transition"></div>
+                                            <div class="absolute w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition"></div>
+                                        </div>
+                                        <span class="text-gray-700 font-medium group-hover:text-brand-blue transition">WhatsApp</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center">
+                                            <input type="radio" name="reply_preference" value="Email" class="peer sr-only">
+                                            <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-brand-blue peer-checked:bg-brand-blue transition"></div>
+                                            <div class="absolute w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition"></div>
+                                        </div>
+                                        <span class="text-gray-700 font-medium group-hover:text-brand-blue transition">E-mail</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="whatsapp" class="block text-sm font-semibold text-gray-700 mb-2">WhatsApp</label>
+                                    <input type="tel" id="whatsapp" name="whatsapp" required pattern="[0-9 \-\(\)]+" minlength="10" class="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue transition-all outline-none text-gray-700 placeholder-gray-400 bg-gray-50 focus:bg-white shadow-inner" placeholder="(00) 00000-0000">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">E-mail</label>
+                                    <input type="email" id="email" name="email" required class="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue transition-all outline-none text-gray-700 placeholder-gray-400 bg-gray-50 focus:bg-white shadow-inner" placeholder="seu.email@exemplo.com">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Sua mensagem</label>
+                                <textarea id="message" name="message" required rows="4" class="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue transition-all outline-none text-gray-700 placeholder-gray-400 bg-gray-50 focus:bg-white shadow-inner resize-y" placeholder="Digite aqui sua mensagem"></textarea>
+                            </div>
+
+                            <div class="pt-4">
+                                <button id="submit-btn" type="submit" class="w-full py-4 bg-brand-blue text-white font-bold rounded-xl shadow-lg hover:shadow-brand-blue/30 hover:bg-brand-blueDark transition-all hover:-translate-y-0.5 transform duration-200 flex justify-center items-center gap-2 group">
+                                    <span id="btn-text">Enviar Mensagem</span>
+                                    <svg id="btn-icon" class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </button>
+                            </div>
+                            
+                            <div id="form-message" class="hidden mt-6"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const form = document.getElementById('contact-form') as HTMLFormElement;
+        const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+        const btnText = document.getElementById('btn-text');
+        const btnIcon = document.getElementById('btn-icon');
+        const formMessage = document.getElementById('form-message');
+
+        // Optional: Client-side validation toggle for required fields based on radio selection
+        const radioPrefs = document.querySelectorAll('input[name="reply_preference"]');
+        const whatsappInput = document.getElementById('whatsapp') as HTMLInputElement;
+        const emailInput = document.getElementById('email') as HTMLInputElement;
+
+        radioPrefs.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                const target = e.target as HTMLInputElement;
+                if (target.value === 'WhatsApp') {
+                    whatsappInput.required = true;
+                    emailInput.required = false;
+                } else {
+                    whatsappInput.required = false;
+                    emailInput.required = true;
+                }
+            });
+        });
+
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+                btnText.textContent = 'Enviando...';
+                btnIcon.classList.add('hidden');
+                formMessage.classList.add('hidden');
+
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+
+                const apiUrl = import.meta.env.DEV 
+                    ? 'http://127.0.0.1:5001/gept-org-br/us-east1/saveContactMessage' 
+                    : 'https://us-east1-gept-org-br.cloudfunctions.net/saveContactMessage';
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    if (response.ok) {
+                        formMessage.textContent = 'Sua mensagem foi enviada com sucesso! Logo entraremos em contato.';
+                        formMessage.className = 'p-4 rounded-xl text-center text-sm font-semibold bg-green-50 text-green-700 mt-6 block';
+                        form.reset();
+                    } else {
+                        const err = await response.json();
+                        throw new Error(err.error || 'Erro ao enviar.');
+                    }
+                } catch (error) {
+                    console.error('Submission error:', error);
+                    formMessage.textContent = 'Ocorreu um erro ao enviar sua mensagem. Tente novamente mais tarde.';
+                    formMessage.className = 'p-4 rounded-xl text-center text-sm font-semibold bg-rose-50 text-rose-700 mt-6 block';
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+                    btnText.textContent = 'Enviar Mensagem';
+                    btnIcon.classList.remove('hidden');
+                }
+            });
+        }
+    </script>
+</Layout>
