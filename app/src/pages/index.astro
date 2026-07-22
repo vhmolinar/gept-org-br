@@ -111,7 +111,55 @@ import Layout from '../layouts/Layout.astro';
         });
     </script>
 
+    <!-- Programação Section -->
+    <section class="py-24 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Programação Semanal</h2>
+                <p class="text-gray-600 max-w-xl mx-auto text-lg">Conheça nosso cronograma semanal de atividades.</p>
+            </div>
 
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white border border-gray-100 p-8 rounded-3xl shadow-xl shadow-gray-200/40 hover:-translate-y-1 transition-transform">
+                    <div class="text-brand-blue font-bold text-sm mb-3 uppercase tracking-wider">Segunda-feira • 19h45</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Triagem Fraterna</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Acolhimento e orientação para quem busca tratamento espiritual.</p>
+                </div>
+                <div class="bg-white border border-gray-100 p-8 rounded-3xl shadow-xl shadow-gray-200/40 hover:-translate-y-1 transition-transform">
+                    <div class="text-brand-blue font-bold text-sm mb-3 uppercase tracking-wider">Terça-feira • 19h45</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Reunião Pública</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Palestras abertas e passes magnéticos (presencial e online).</p>
+                </div>
+                <div class="bg-white border border-gray-100 p-8 rounded-3xl shadow-xl shadow-gray-200/40 hover:-translate-y-1 transition-transform">
+                    <div class="text-brand-blue font-bold text-sm mb-3 uppercase tracking-wider">Quarta-feira • 19h45</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Tratamento Espiritual</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Tratamento de desobsessão, evangelização e cura</p>
+                </div>
+                <div class="bg-white border border-gray-100 p-8 rounded-3xl shadow-xl shadow-gray-200/40 hover:-translate-y-1 transition-transform">
+                    <div class="text-brand-blue font-bold text-sm mb-3 uppercase tracking-wider">Sábado • Manhã</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Evangelização e CECX</h3>
+                    <ul class="text-gray-600 text-sm space-y-2">
+                        <li><span class="font-medium text-gray-800">09h00:</span> Mocidade Espírita</li>
+                        <li><span class="font-medium text-gray-800">09h10:</span> Evangelização Infantil</li>
+                        <li><span class="font-medium text-gray-800">09h30:</span> Campanha de Esclarecimento Chico Xavier</li>
+                    </ul>
+                </div>
+                <div class="bg-white border border-gray-100 p-8 rounded-3xl shadow-xl shadow-gray-200/40 hover:-translate-y-1 transition-transform">
+                    <div class="text-brand-blue font-bold text-sm mb-3 uppercase tracking-wider">Sábado • 17h15</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Cursos Espiritismo</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Global Kardec (Estudos Sistematizados).</p>
+                </div>
+                <div class="bg-white border border-gray-100 p-8 rounded-3xl shadow-xl shadow-gray-200/40 hover:-translate-y-1 transition-transform">
+                    <div class="text-brand-blue font-bold text-sm mb-3 uppercase tracking-wider">Domingo • Manhã</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Mocidade e CFAS</h3>
+                    <ul class="text-gray-600 text-sm space-y-2">
+                        <li><span class="font-medium text-gray-800">09h00:</span> Campanha de Fraternidade Auta de Souza</li>
+                        <li><span class="font-medium text-gray-800">09h30:</span> Mocidade Espírita</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- 4. Volunteer/Donate CTA Section -->
     <section class="py-24 px-4 bg-brand-blue text-white relative overflow-hidden mt-12">
@@ -128,7 +176,7 @@ import Layout from '../layouts/Layout.astro';
                 <div class="bg-white text-gray-800 rounded-2xl p-8 hover-card shadow-2xl relative overflow-hidden flex flex-col justify-between">
                     <div>
                         <img src="/images/C.F.A.S-Logo.png" alt="CFAS" class="h-16 mb-4">
-                        <h3 class="text-2xl font-bold mb-3">Campanha Auta de Souza</h3>
+                        <h3 class="text-2xl font-bold mb-3">Campanha de Fraternidade Auta de Souza</h3>
                         <p class="text-gray-600 mb-6 text-sm leading-relaxed">Ajude-nos a levar consolo espiritual e alimento material de porta em porta. Saiba como ser um tarefeiro ou doador para as famílias carentes que assistimos.</p>
                     </div>
                     <a href="/campanha-auta-de-souza" class="inline-block text-center w-full py-3 bg-brand-blue text-white font-medium rounded-xl hover:bg-brand-blueDark transition">
