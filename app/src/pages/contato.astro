@@ -140,7 +140,7 @@ import Layout from '../layouts/Layout.astro';
 
                 const apiUrl = import.meta.env.DEV 
                     ? 'http://127.0.0.1:5001/gept-org-br/us-east1/saveContactMessage' 
-                    : 'https://us-east1-gept-org-br.cloudfunctions.net/saveContactMessage';
+                    : 'https://savecontactmessage-fjafv4qsaa-ue.a.run.app';
 
                 try {
                     const response = await fetch(apiUrl, {

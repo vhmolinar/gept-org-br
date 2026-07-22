@@ -209,7 +209,7 @@ import Layout from '../layouts/Layout.astro';
 
                 const apiUrl = import.meta.env.DEV 
                     ? 'http://127.0.0.1:5001/gept-org-br/us-east1/saveCourseLead' 
-                    : 'https://us-east1-gept-org-br.cloudfunctions.net/saveCourseLead';
+                    : 'https://savecourselead-fjafv4qsaa-ue.a.run.app';
 
                 try {
                     const response = await fetch(apiUrl, {

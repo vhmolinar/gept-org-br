@@ -277,7 +277,7 @@ import Layout from '../layouts/Layout.astro';
             const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
             const API_URL = isLocal 
                 ? 'http://127.0.0.1:5001/gept-org-br/us-east1/saveCampaignLeads'
-                : 'https://us-east1-gept-org-br.cloudfunctions.net/saveCampaignLeads';
+                : 'https://savecampaignleads-fjafv4qsaa-ue.a.run.app';
 
             try {
                 const response = await fetch(API_URL, {
