@@ -73,7 +73,7 @@ exports.saveCampaignLeads = onRequest({ region: "us-east1", cors: true }, async 
             return res.status(400).json({ error: "WhatsApp inválido. Inclua o DDD." });
         }
         
-        const validTypes = ["AUTA_DE_SOUZA", "CHICO_XAVIER", "MADRE_TEREZA"];
+        const validTypes = ["AUTA_DE_SOUZA", "CHICO_XAVIER", "MADRE_TEREZA", "EVANGELIZACAO_INFANTIL"];
         if (!type || !validTypes.includes(type)) {
             return res.status(400).json({ error: "Tipo de campanha inválido." });
         }
