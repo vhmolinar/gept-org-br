@@ -3,18 +3,42 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Tratamento Espiritual">
-    <section class="py-24 px-4 bg-white min-h-screen">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-16">
-                <div class="w-20 h-20 bg-blue-50 text-brand-blue rounded-full flex items-center justify-center mx-auto mb-6">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-24 px-4 overflow-hidden bg-brand-blue">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-brand-blue via-brand-blueDark to-blue-900 opacity-90"></div>
+            <!-- Optional subtle pattern -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto relative z-10 flex flex-col md:flex-row items-center gap-12">
+            <div class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border border-white/20 shadow-2xl flex-shrink-0 bg-white flex items-center justify-center text-brand-blue p-2">
+                <svg class="w-16 h-16 md:w-24 md:h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+            </div>
+            <div class="text-white text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full backdrop-blur-md mb-6 border border-white/20 text-sm font-semibold uppercase tracking-wide text-blue-100">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    Instituto da Mediunidade
                 </div>
-                
-                <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800">Tratamento Espiritual</h1>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-md">
+                    Tratamento Espiritual
+                </h1>
+                <p class="text-xl text-blue-100 max-w-3xl leading-relaxed font-light">
                     Oferecemos atendimento espiritual fraterno e passes tanto de forma presencial em nossa casa quanto de forma virtual (à distância) através da plataforma Zoom.
                 </p>
+                <div class="mt-8 flex flex-wrap gap-4 justify-center md:text-left md:justify-start">
+                    <div class="flex items-center gap-3 bg-white/10 px-6 py-4 rounded-2xl backdrop-blur-sm border border-white/10">
+                        <svg class="w-6 h-6 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="font-medium">👉🏾 Quarta-feira - 19h45</span>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-24 px-4 bg-gray-50 min-h-screen">
+        <div class="max-w-5xl mx-auto">
 
             <div class="grid md:grid-cols-3 gap-8 mb-16">
                 <!-- Step 1 -->

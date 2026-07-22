@@ -3,17 +3,42 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Campanha de Fraternidade Auta de Souza">
-    <section class="py-24 px-4 bg-white min-h-screen">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-16 flex flex-col items-center">
-                <img src="/images/C.F.A.S-Logo.png" alt="Logo Campanha de Fraternidade Auta de Souza" class="h-32 w-auto mb-8 drop-shadow-md">
-                
-                <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800">Campanha de Fraternidade Auta de Souza</h1>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    A Campanha de Fraternidade Auta de Souza (CFAS) é uma atividade de difusão da Doutrina Espírita e de assistência material e espiritual.
-                </p>
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-24 px-4 overflow-hidden bg-brand-blue">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-brand-blue via-brand-blueDark to-blue-900 opacity-90"></div>
+            <!-- Optional subtle pattern -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto relative z-10 flex flex-col md:flex-row items-center gap-12">
+            <div class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border border-white/20 shadow-2xl flex-shrink-0 bg-white flex items-center justify-center p-2">
+                <img src="/images/C.F.A.S-Logo.png" alt="Logo Campanha de Fraternidade Auta de Souza" class="w-full h-full object-contain">
             </div>
+            <div class="text-white text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full backdrop-blur-md mb-6 border border-white/20 text-sm font-semibold uppercase tracking-wide text-blue-100">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    Instituto da Caridade
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-md">
+                    Campanha de Fraternidade Auta de Souza
+                </h1>
+                <p class="text-xl text-blue-100 max-w-3xl leading-relaxed font-light">
+                    A CFAS é uma atividade de difusão da Doutrina Espírita e de assistência material e espiritual.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-4 justify-center md:text-left md:justify-start">
+                    <div class="flex items-center gap-3 bg-white/10 px-6 py-4 rounded-2xl backdrop-blur-sm border border-white/10">
+                        <svg class="w-6 h-6 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="font-medium">👉🏾 Domingo - 9h00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Main Content -->
+    <section class="py-24 px-4 bg-gray-50 min-h-screen">
+        <div class="max-w-5xl mx-auto">
             <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
                 <div>
                     <h2 class="text-3xl font-bold mb-6 text-brand-blue">O que é a Campanha?</h2>
@@ -25,13 +50,13 @@ import Layout from '../layouts/Layout.astro';
                     </p>
                 </div>
                 <div>
-                    <img src="/images/campanha_de_fraternidade_auta_de_souza_31_1_20191001183603.jpg" alt="Trabalho na Campanha Auta de Souza" class="rounded-2xl shadow-xl w-full object-cover">
+                    <img src="/images/campanha_de_fraternidade_auta_de_souza_31_1_20191001183603.jpg" alt="Trabalho na Campanha Auta de Souza" class="rounded-2xl shadow-lg w-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300">
                 </div>
             </div>
 
             <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
                 <div class="order-2 md:order-1">
-                    <img src="/images/lindos_casos_da_campanha_de_fraternidade_auta_de_souza_133_1_20191001183608.jpg" alt="Livro Lindos Casos da Campanha Auta de Souza" class="rounded-2xl shadow-xl w-full object-cover">
+                    <img src="/images/lindos_casos_da_campanha_de_fraternidade_auta_de_souza_133_1_20191001183608.jpg" alt="Livro Lindos Casos da Campanha Auta de Souza" class="rounded-2xl shadow-lg w-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300">
                 </div>
                 <div class="order-1 md:order-2">
                     <h2 class="text-3xl font-bold mb-6 text-brand-blue">Venha Participar</h2>
