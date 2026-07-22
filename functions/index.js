@@ -1,7 +1,9 @@
 const { onRequest } = require("firebase-functions/v2/https");
+const { defineSecret } = require('firebase-functions/params');
 const admin = require("firebase-admin");
 const { getFirestore } = require("firebase-admin/firestore");
 
+const whatsappVerifyToken = defineSecret('WHATSAPP_VERIFY_TOKEN');
 admin.initializeApp();
 const db = getFirestore(admin.app(), "gept-org-br");
 
@@ -146,10 +148,10 @@ exports.saveContactMessage = onRequest({ region: "us-east1", cors: true }, async
 });
 
 // WhatsApp Business API Webhook
-exports.whatsappWebhook = onRequest({ region: "us-east1" }, (req, res) => {
+exports.whatsappWebhook = onRequest({ region: "us-east1", secrets: [whatsappVerifyToken] }, (req, res) => {
     if (req.method === "GET") {
         // This token must match the one you configure in the Meta App Dashboard
-        const VERIFY_TOKEN = process.env.WHATSAPP_VERIFY_TOKEN || "gept_whatsapp_verify_token_2026";
+        const VERIFY_TOKEN = whatsappVerifyToken.value();
         
         const mode = req.query["hub.mode"];
         const token = req.query["hub.verify_token"];
