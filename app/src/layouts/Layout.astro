@@ -4,12 +4,17 @@ import '../styles/global.css';
 interface Props {
 	title: string;
 	description?: string;
+	image?: string;
 }
 
 const { 
     title,
-    description = "Grupo Espírita Paulo de Tarso (GEPT) - Casa Espírita em Uberlândia, MG. Estudo, prática e difusão do Espiritismo, com tratamento espiritual e atividades solidárias."
+    description = "Grupo Espírita Paulo de Tarso (GEPT) - Casa Espírita em Uberlândia, MG. Estudo, prática e difusão do Espiritismo, com tratamento espiritual e atividades solidárias.",
+    image = "/images/logo.png"
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url);
+const ogImageURL = new URL(image, Astro.site || Astro.url);
 ---
 
 <!DOCTYPE html>
@@ -20,9 +25,14 @@ const {
     <meta name="description" content={description}>
     <title>{title} | Grupo Espírita Paulo de Tarso</title>
     
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
     <!-- Open Graph / Social -->
+    <meta property="og:url" content={canonicalURL}>
     <meta property="og:title" content={`${title} | Grupo Espírita Paulo de Tarso`}>
     <meta property="og:description" content={description}>
+    <meta property="og:image" content={ogImageURL}>
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Grupo Espírita Paulo de Tarso">
     <meta property="og:locale" content="pt_BR">
