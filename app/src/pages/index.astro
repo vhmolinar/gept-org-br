@@ -4,38 +4,38 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Início">
     <!-- 1. Hero Section -->
-    <section class="relative py-32 px-4 overflow-hidden" id="hero-carousel">
+    <section class="relative min-h-[60vh] md:min-h-[70vh] flex flex-col justify-end pb-16 md:pb-24 px-4 overflow-hidden" id="hero-carousel">
         <!-- Background images -->
         <div class="absolute inset-0 z-0 bg-gray-800 overflow-hidden">
             <!-- Slide 1 -->
             <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-100">
                 <div class="absolute inset-0 bg-cover bg-center blur-2xl opacity-50 scale-110" style="background-image: url('/images/activities/coral-escola.jpg');"></div>
-                <div class="absolute inset-0 bg-contain bg-no-repeat bg-center drop-shadow-2xl scale-125" style="background-image: url('/images/activities/coral-escola.jpg');"></div>
+                <div class="absolute inset-0 bg-contain bg-no-repeat bg-center drop-shadow-2xl" style="background-image: url('/images/activities/coral-escola.jpg');"></div>
             </div>
             <!-- Slide 2 -->
             <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-0">
                 <div class="absolute inset-0 bg-cover bg-center blur-2xl opacity-50 scale-110" style="background-image: url('/images/activities/campanha-camilo-castelo-branco.png');"></div>
-                <div class="absolute inset-0 bg-contain bg-no-repeat bg-center drop-shadow-2xl scale-125" style="background-image: url('/images/activities/campanha-camilo-castelo-branco.png');"></div>
+                <div class="absolute inset-0 bg-contain bg-no-repeat bg-center drop-shadow-2xl" style="background-image: url('/images/activities/campanha-camilo-castelo-branco.png');"></div>
             </div>
             <!-- Slide 3 -->
             <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-0">
                 <div class="absolute inset-0 bg-cover bg-center blur-2xl opacity-50 scale-110" style="background-image: url('/images/activities/campanha-madre-tereza.png');"></div>
-                <div class="absolute inset-0 bg-contain bg-no-repeat bg-center drop-shadow-2xl scale-125" style="background-image: url('/images/activities/campanha-madre-tereza.png');"></div>
+                <div class="absolute inset-0 bg-contain bg-no-repeat bg-center drop-shadow-2xl" style="background-image: url('/images/activities/campanha-madre-tereza.png');"></div>
             </div>
             <!-- Slide 4 -->
             <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-0">
                 <div class="absolute inset-0 bg-cover bg-center blur-2xl opacity-50 scale-110" style="background-image: url('/images/activities/escola.jpg');"></div>
-                <div class="absolute inset-0 bg-contain bg-no-repeat bg-center drop-shadow-2xl scale-125" style="background-image: url('/images/activities/escola.jpg');"></div>
+                <div class="absolute inset-0 bg-contain bg-no-repeat bg-center drop-shadow-2xl" style="background-image: url('/images/activities/escola.jpg');"></div>
             </div>
             <!-- Slide 5 -->
             <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-0">
                 <div class="absolute inset-0 bg-cover bg-center blur-2xl opacity-50 scale-110" style="background-image: url('/images/activities/mocidade.jpeg');"></div>
-                <div class="absolute inset-0 bg-contain bg-no-repeat bg-center drop-shadow-2xl scale-125" style="background-image: url('/images/activities/mocidade.jpeg');"></div>
+                <div class="absolute inset-0 bg-contain bg-no-repeat bg-center drop-shadow-2xl" style="background-image: url('/images/activities/mocidade.jpeg');"></div>
             </div>
             <!-- Slide 6 -->
             <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-0">
                 <div class="absolute inset-0 bg-cover bg-center blur-2xl opacity-50 scale-110" style="background-image: url('/images/activities/posto-euripedes.png');"></div>
-                <div class="absolute inset-0 bg-contain bg-no-repeat bg-center drop-shadow-2xl scale-125" style="background-image: url('/images/activities/posto-euripedes.png');"></div>
+                <div class="absolute inset-0 bg-contain bg-no-repeat bg-center drop-shadow-2xl" style="background-image: url('/images/activities/posto-euripedes.png');"></div>
             </div>
             <!-- Overlay to make text readable -->
             <div class="absolute inset-0 bg-black/20"></div>
@@ -45,20 +45,9 @@ import Layout from '../layouts/Layout.astro';
             <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight tracking-tight [text-shadow:_0_4px_24px_rgba(0,0,0,0.9),_0_1px_3px_rgba(0,0,0,1)]">
                 Grupo Espírita Paulo de Tarso
             </h1>
-            <p class="text-xl md:text-2xl text-gray-100 mb-10 max-w-2xl mx-auto leading-relaxed font-light [text-shadow:_0_4px_16px_rgba(0,0,0,0.8),_0_1px_2px_rgba(0,0,0,1)]">
+            <p class="text-xl md:text-2xl text-gray-100 max-w-2xl mx-auto leading-relaxed font-light [text-shadow:_0_4px_16px_rgba(0,0,0,0.8),_0_1px_2px_rgba(0,0,0,1)]">
                 Deus, Cristo e Caridade
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4 w-full">
-                <a href="/tratamento-espiritual" class="px-8 py-3 bg-brand-blue text-white font-medium rounded-full shadow-lg hover:bg-brand-blueDark transition transform hover:-translate-y-1 border border-brand-blue">
-                    Tratamento espiritual
-                </a>
-                <a href="/atividades" class="px-8 py-3 bg-white/10 backdrop-blur-sm text-white font-medium rounded-full border border-white/30 shadow-sm hover:bg-white/20 transition transform hover:-translate-y-1">
-                    Ver Nossa Programação
-                </a>
-                <a href="/institutos" class="px-8 py-3 bg-white/10 backdrop-blur-sm text-white font-medium rounded-full border border-white/30 shadow-sm hover:bg-white/20 transition transform hover:-translate-y-1">
-                    Nossos Institutos
-                </a>
-            </div>
         </div>
     </section>
 
@@ -74,6 +63,55 @@ import Layout from '../layouts/Layout.astro';
             }, 4000);
         });
     </script>
+
+    <!-- 2. Navigation Cards Section -->
+    <section class="relative z-20 bg-gray-50 py-16 md:py-24 px-4">
+        <div class="max-w-6xl mx-auto relative z-30">
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+                <!-- Nossos Cursos -->
+                <a href="/cursos-espiritismo" class="group bg-white rounded-3xl p-8 shadow-xl shadow-gray-200/40 border border-gray-100 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden flex flex-col h-full">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-blue/5 rounded-bl-[100px] transition-transform group-hover:scale-110"></div>
+                    <div class="w-14 h-14 bg-blue-50 text-brand-blue rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-brand-blue transition-colors">Nossos Cursos</h3>
+                    <p class="text-gray-600 leading-relaxed flex-grow">Conheça a Doutrina Espírita. Cursos gratuitos para trazer esclarecimentos luminosos sobre a vida.</p>
+                    <div class="mt-6 flex items-center text-brand-blue font-semibold">
+                        <span>Saiba mais</span>
+                        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                </a>
+
+                <!-- Tratamento Espiritual -->
+                <a href="/tratamento-espiritual" class="group bg-brand-blue rounded-3xl p-8 shadow-xl shadow-blue-900/20 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden flex flex-col h-full text-white">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-bl-[100px] transition-transform group-hover:scale-110"></div>
+                    <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Tratamento Espiritual</h3>
+                    <p class="text-blue-100 leading-relaxed flex-grow">Atendimento espiritual fraterno e passes de forma presencial e virtual (à distância).</p>
+                    <div class="mt-6 flex items-center text-white font-semibold">
+                        <span>Saiba mais</span>
+                        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                </a>
+
+                <!-- Atividades -->
+                <a href="/atividades" class="group bg-white rounded-3xl p-8 shadow-xl shadow-gray-200/40 border border-gray-100 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden flex flex-col h-full">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-blue/5 rounded-bl-[100px] transition-transform group-hover:scale-110"></div>
+                    <div class="w-14 h-14 bg-blue-50 text-brand-blue rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-brand-blue transition-colors">Atividades</h3>
+                    <p class="text-gray-600 leading-relaxed flex-grow">Conheça nosso cronograma semanal, nossas ações sociais e saiba como você pode se engajar.</p>
+                    <div class="mt-6 flex items-center text-brand-blue font-semibold">
+                        <span>Saiba mais</span>
+                        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- 4. Volunteer/Donate CTA Section -->
     <section class="py-24 px-4 bg-brand-blue text-white relative overflow-hidden mt-12">

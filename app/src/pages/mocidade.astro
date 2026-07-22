@@ -1,0 +1,163 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Mocidade Espírita">
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-24 px-4 overflow-hidden bg-brand-blue">
+        <div class="absolute inset-0 z-0">
+            <img src="/images/activities/mocidade.jpeg" alt="Mocidade Background" class="w-full h-full object-cover opacity-20 mix-blend-overlay">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-blue via-brand-blue/90 to-brand-blue/80"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto relative z-10 flex flex-col md:flex-row items-center gap-12">
+            <div class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl flex-shrink-0 bg-white">
+                <img src="/images/mocidade-logo.jpg" alt="Logo Mocidade Espírita" class="w-full h-full object-cover">
+            </div>
+            <div class="text-white text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full backdrop-blur-md mb-6 border border-white/20 text-sm font-semibold uppercase tracking-wide text-blue-100">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    Instituto do Jovem
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                    Mocidade Espírita
+                </h1>
+                <p class="text-xl text-blue-100 max-w-3xl leading-relaxed font-light">
+                    Um núcleo de trabalho focado em atender, acompanhar e direcionar jovens a partir de 12 anos, propiciando a troca de experiências e contribuindo para a sua formação moral à luz do Evangelho.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
+                    <div class="flex items-center gap-3 bg-white/10 px-6 py-4 rounded-2xl backdrop-blur-sm border border-white/10">
+                        <svg class="w-6 h-6 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="font-medium">👉🏾 Sábado - 9h00</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/10 px-6 py-4 rounded-2xl backdrop-blur-sm border border-white/10">
+                        <svg class="w-6 h-6 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="font-medium">👉🏾 Domingo - 9h30</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-24 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <!-- Objectives Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 bg-blue-50 text-brand-blue rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-blue transition-colors">Direcionamento</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">Traçar diretrizes seguras no Evangelho para que o jovem seja a base de uma sociedade mais humanizada.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 bg-blue-50 text-brand-blue rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-blue transition-colors">Estímulo</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">Incentivar o jovem ao trabalho no bem e despertar a iniciativa da autoeducação contínua.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 bg-blue-50 text-brand-blue rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-blue transition-colors">Acompanhamento</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">Apoiar o desenvolvimento físico, moral e psicológico, com estudos doutrinários e prática.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 bg-blue-50 text-brand-blue rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-blue transition-colors">Integração</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">Propiciar meios para que a juventude se conecte a Jesus e desenvolva a alegria cristã.</p>
+                </div>
+            </div>
+
+            <!-- Functioning Split -->
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-20">
+                <!-- Sábado -->
+                <div class="space-y-8">
+                    <div class="inline-flex items-center justify-center p-4 bg-brand-blue/10 text-brand-blue rounded-2xl shadow-inner">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900">Mocidade de Sábado</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        A Mocidade aos sábados propõe uma integração completa do jovem na Casa Espírita. Nela, o jovem visualiza, participa e contribui com as atividades de todos os Institutos, compreendendo o funcionamento do Centro Espírita na sua integralidade.
+                    </p>
+                    <ul class="space-y-5 pt-4">
+                        <li class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <p class="text-gray-700"><strong>Cursos e Estudos:</strong> Aulas em grupos, explorando a Doutrina Espírita e temas vitais (família, vícios, etc) através dos Níveis III e IV.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <p class="text-gray-700"><strong>Oficinas Recreativas:</strong> Momentos de confraternização e desenvolvimento lúdico e artístico.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <p class="text-gray-700"><strong>Atividades Práticas:</strong> Visitas e ações solidárias que fortalecem o trabalho no bem e a reforma íntima.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Domingo -->
+                <div class="space-y-8 bg-white p-10 rounded-[2.5rem] shadow-xl shadow-gray-200/50 border border-gray-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-blue/5 rounded-bl-[100px]"></div>
+                    <div class="relative z-10">
+                        <div class="inline-flex items-center justify-center p-4 bg-brand-blue/10 text-brand-blue rounded-2xl mb-8 shadow-inner">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+                        </div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6">Mocidade de Domingo</h2>
+                        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                            Uma opção criada especialmente para jovens que não podem comparecer aos sábados. Este programa foca fortemente na prática do Movimento Espírita.
+                        </p>
+                        <ul class="space-y-5">
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-blue-100 text-brand-blue flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </div>
+                                <p class="text-gray-700"><strong>Prática Assistencial:</strong> Forte vínculo com os Postos de Assistência, incluindo Campanhas como a de Auta de Souza e Jesus no Lar.</p>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-blue-100 text-brand-blue flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </div>
+                                <p class="text-gray-700"><strong>Oficinas de Arte e Comunicação:</strong> Desenvolvimento no campo da arte elevada (música, teatro, artesanato) e da comunicação social (vídeos, campanhas).</p>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-blue-100 text-brand-blue flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </div>
+                                <p class="text-gray-700"><strong>Diferencial Doutrinário:</strong> Aborda obras específicas, como as de Luiz Sérgio e auxiliares de Allan Kardec.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Instagram CTA -->
+            <div class="mt-24 bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 rounded-[3rem] p-12 md:p-16 text-center text-white relative overflow-hidden shadow-2xl">
+                <div class="absolute inset-0 bg-[url('/images/activities/mocidade.jpeg')] mix-blend-overlay opacity-10 bg-cover bg-center"></div>
+                <div class="relative z-10 max-w-2xl mx-auto">
+                    <svg class="w-16 h-16 mx-auto mb-6 opacity-90 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 [text-shadow:_0_2px_10px_rgba(0,0,0,0.2)]">Acompanhe a Mocidade</h2>
+                    <p class="text-lg md:text-xl text-white/95 mb-10 font-light leading-relaxed">
+                        Siga nossa página no Instagram para ficar por dentro de todas as atividades, fotos dos encontros e muita alegria cristã!
+                    </p>
+                    <a href="https://www.instagram.com/mocidadeespiritaa" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-10 py-5 bg-white text-purple-600 font-bold text-lg rounded-full hover:bg-gray-50 transition transform hover:-translate-y-1 hover:shadow-2xl shadow-xl group">
+                        <span>@mocidadeespiritaa</span>
+                        <svg class="w-6 h-6 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</Layout>
