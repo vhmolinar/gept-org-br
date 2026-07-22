@@ -1,0 +1,111 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Grupo Espírita Paulo de Tarso (GEPT) - Casa Espírita em Uberlândia, MG. Estudo, prática e difusão do Espiritismo, com tratamento espiritual e atividades solidárias.">
+    <title>{title} | Grupo Espírita Paulo de Tarso</title>
+    
+    <!-- Google Fonts: Outfit (Headings) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <style is:global>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Outfit', sans-serif; }
+        
+        /* Micro-animations and polish */
+        .hover-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .hover-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-dark antialiased">
+
+    <!-- Topbar -->
+    <div class="bg-gray-800 text-white text-sm py-2 px-4 text-center">
+        Boas vindas ao Grupo Espírita Paulo de Tarso! Uberlândia/MG
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center">
+                <img src="/images/logo.png" alt="Logo GEPT" class="h-20 w-auto">
+            </a>
+            <nav class="hidden md:flex items-center space-x-6 font-medium text-gray-600">
+                <a href="/" class="hover:text-brand-blue transition">Início</a>
+                <a href="/atividades" class="hover:text-brand-blue transition">Atividades</a>
+                <a href="/institutos" class="hover:text-brand-blue transition">Institutos</a>
+                
+                <!-- Dropdown Campanhas -->
+                <div class="relative group">
+                    <button class="flex items-center gap-1 hover:text-brand-blue transition py-2">
+                        Campanhas
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div class="absolute top-full left-0 pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top z-50">
+                        <div class="w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-2">
+                            <a href="/campanha-auta-de-souza" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-brand-blue transition">Auta de Souza</a>
+                            <a href="/campanha-madre-tereza" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-brand-blue transition">Madre Tereza de Calcutá</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="/tratamento-espiritual" class="hover:text-brand-blue transition">Tratamento Espiritual</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 px-4 border-t border-gray-800 text-sm mt-20">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+            <div>
+                <h4 class="text-white text-xl font-bold mb-4 font-heading tracking-wider">GEPT</h4>
+                <p class="mb-4 text-gray-500">Grupo Espírita Paulo de Tarso<br>Sede Obras Sociais</p>
+                <div class="flex space-x-4">
+                    <a href="https://facebook.com/osgept" class="hover:text-white transition">Facebook</a>
+                    <a href="https://www.instagram.com/gepaulodetarso/" class="hover:text-white transition">Instagram</a>
+                    <a href="https://www.youtube.com/user/osgept" class="hover:text-white transition">YouTube</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Links Úteis</h4>
+                <ul class="space-y-2">
+                    <li><a href="/" class="hover:text-brand-blue transition">Início</a></li>
+                    <li><a href="/institutos" class="hover:text-brand-blue transition">Institutos</a></li>
+                    <li><a href="/atividades" class="hover:text-brand-blue transition">Atividades</a></li>
+                    <li><a href="/gept-tad-zoom" class="hover:text-brand-blue transition">Tratamento Online</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Contato</h4>
+                <p class="mb-2">Av. Mário Nunes, 174<br>Pres. Roosevelt - Uberlândia/MG</p>
+                <a href="/contato/" class="inline-block mt-3 px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 transition">Enviar Mensagem</a>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto mt-12 pt-8 border-t border-gray-800 text-center text-xs">
+            © 2026 – Grupo Espírita Paulo de Tarso. Todos os direitos reservados.
+        </div>
+    </footer>
+</body>
+</html>

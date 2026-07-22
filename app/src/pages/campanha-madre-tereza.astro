@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Campanha Madre Tereza de Calcutá - Em Defesa da Vida">
+    <section class="py-24 px-4 bg-white min-h-screen">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16 flex flex-col items-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Campanha Madre Tereza de Calcutá</h1>
+                <p class="text-2xl text-brand-blue mb-8 font-medium">Em Defesa da Vida</p>
+                <div class="bg-rose-50 border border-rose-100 p-8 rounded-2xl max-w-3xl text-left">
+                    <p class="italic text-gray-700 leading-relaxed text-lg mb-4">
+                        "344. Em que momento a alma se une ao corpo?<br><br>
+                        A união começa na concepção, mas só é completa por ocasião do nascimento. Desde o instante da concepção, o Espírito designado para habitar certo corpo a este se liga por um laço fluídico, que cada vez mais se vai apertando até ao instante em que a criança vê a luz (...)"
+                    </p>
+                    <p class="text-gray-600 font-bold text-right">- Allan Kardec, O Livro dos Espíritos</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 text-gray-900">A Campanha</h2>
+                    <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                        Tem como objetivo a conscientização da sociedade sobre a importância de valorizarmos a vida, protegendo o feto desde o momento da concepção. Nesta campanha são realizadas diversas atividades nas ruas, como distribuição de mensagens, palestras, fixação de faixas, doação de livros dentre outros.
+                    </p>
+                    <p class="text-gray-700 font-medium italic">
+                        "Maternidade é a plenitude do coração feminino que norteia o progresso. Concepção, gravidez, parto e devoção afetiva representam estações difíceis e belas de um ministério divino."
+                        <span class="block text-sm text-gray-500 font-normal mt-2">- André Luiz, O Espírito da Verdade</span>
+                    </p>
+                </div>
+                <div>
+                    <img src="https://gept.org.br/wp-content/uploads/2023/05/Carmpanha_madre_tereza_Cartaz.webp" alt="Cartaz Campanha Madre Tereza" class="rounded-2xl shadow-xl w-full object-cover">
+                </div>
+            </div>
+
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold mb-6 text-gray-900">Assista ao Vídeo</h2>
+                <div class="aspect-video rounded-2xl overflow-hidden shadow-2xl">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TdotnORjDxU" title="Campanha Madre Tereza de Calcutá" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Materiais Section (Collapsible) -->
+            <details class="bg-white border border-gray-200 rounded-2xl shadow-sm mb-16 group">
+                <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-2xl text-gray-900 group-open:border-b border-gray-100">
+                    Materiais para Divulgação
+                    <span class="transition group-open:rotate-180 text-brand-blue">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </span>
+                </summary>
+                <div class="p-8 bg-gray-50 rounded-b-2xl">
+                    <p class="text-gray-600 mb-8 text-center text-lg">Confira abaixo os materiais e panfletos utilizados durante a campanha:</p>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <img src="https://gept.org.br/wp-content/uploads/2023/05/mensagem_confia_e_segue.jpg" alt="Mensagem Confia e Segue" class="rounded-xl shadow-lg w-full hover:scale-105 transition duration-300">
+                        <img src="https://gept.org.br/wp-content/uploads/2023/05/mensagem_em_defesa_da_vida.jpg" alt="Mensagem Em Defesa da Vida" class="rounded-xl shadow-lg w-full hover:scale-105 transition duration-300">
+                    </div>
+                </div>
+            </details>
+
+            <!-- Músicas Section -->
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold mb-8 text-gray-900 text-center">Músicas da Campanha</h2>
+                <div class="flex flex-col gap-4 max-w-3xl mx-auto">
+                    <!-- Alegria de Viver -->
+                    <div class="bg-rose-50 p-6 rounded-xl border border-rose-100 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center gap-4 w-full sm:w-auto">
+                            <div class="bg-white p-3 rounded-full text-rose-500 shadow-sm flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
+                            </div>
+                            <span class="font-bold text-gray-900 text-lg">Alegria de Viver</span>
+                        </div>
+                        <audio controls class="w-full sm:w-72 h-10 outline-none">
+                            <source src="/audio/Artistas-diversos-ALEGRIA-DE-VIVER.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                    
+                    <!-- Deixar Florescer -->
+                    <div class="bg-rose-50 p-6 rounded-xl border border-rose-100 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center gap-4 w-full sm:w-auto">
+                            <div class="bg-white p-3 rounded-full text-rose-500 shadow-sm flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
+                            </div>
+                            <span class="font-bold text-gray-900 text-lg">Deixar Florescer</span>
+                        </div>
+                        <audio controls class="w-full sm:w-72 h-10 outline-none">
+                            <source src="/audio/Artistas-diversos-DEIXAR-FLORESCER.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                    
+                    <!-- São Chegados os Tempos -->
+                    <div class="bg-rose-50 p-6 rounded-xl border border-rose-100 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center gap-4 w-full sm:w-auto">
+                            <div class="bg-white p-3 rounded-full text-rose-500 shadow-sm flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
+                            </div>
+                            <span class="font-bold text-gray-900 text-lg">São Chegados os Tempos</span>
+                        </div>
+                        <audio controls class="w-full sm:w-72 h-10 outline-none">
+                            <source src="/audio/Artistas-diversos-SAO-CHEGADOS-OS-TEMPOS.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                    
+                    <!-- Viver é Tão Bom -->
+                    <div class="bg-rose-50 p-6 rounded-xl border border-rose-100 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center gap-4 w-full sm:w-auto">
+                            <div class="bg-white p-3 rounded-full text-rose-500 shadow-sm flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
+                            </div>
+                            <span class="font-bold text-gray-900 text-lg">Viver é Tão Bom</span>
+                        </div>
+                        <audio controls class="w-full sm:w-72 h-10 outline-none">
+                            <source src="/audio/Artistas-diversos-VIVER-E-TAO-BOM.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</Layout>

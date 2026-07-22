@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Grupo Espírita Paulo de Tarso (GEPT) - Casa Espírita em Uberlândia, MG. Estudo, prática e difusão do Espiritismo, com tratamento espiritual e atividades solidárias.">
+    <title>Grupo Espírita Paulo de Tarso | Uberlândia - MG</title>
+    
+    <!-- Google Fonts: Outfit (Headings) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS v3 via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#001784',
+                            blueDark: '#000c47',
+                            dark: '#333333',
+                            light: '#F9F9F9',
+                            muted: '#777777'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Outfit', sans-serif; }
+        
+        /* Micro-animations and polish */
+        .hover-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .hover-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-dark antialiased">
+
+    <!-- Topbar -->
+    <div class="bg-gray-800 text-white text-sm py-2 px-4 text-center">
+        Boas vindas ao Grupo Espírita Paulo de Tarso! Uberlândia/MG
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="images/logo.png" alt="Logo GEPT" class="h-12 w-auto">
+            </a>
+            <nav class="hidden md:flex space-x-6 font-medium text-gray-600">
+                <a href="#" class="hover:text-brand-blue transition">Início</a>
+                <a href="#atividades" class="hover:text-brand-blue transition">Atividades</a>
+                <a href="#institutos" class="hover:text-brand-blue transition">Institutos</a>
+                <a href="#doar" class="bg-brand-blue text-white px-5 py-2 rounded-full hover:bg-brand-blueDark transition shadow-md">Seja Voluntário / Doar</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section class="relative bg-gradient-to-br from-blue-50 to-white py-24 px-4 overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Acolhimento, Estudo e <span class="text-brand-blue">Caridade</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Bem-vindo ao Grupo Espírita Paulo de Tarso. Uma casa de portas abertas para o tratamento espiritual, estudo da Doutrina Espírita e amparo social em Uberlândia, MG.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#atividades" class="px-8 py-3 bg-brand-blue text-white font-medium rounded-full shadow-lg hover:bg-brand-blueDark transition transform hover:-translate-y-1">
+                    Ver Nossa Programação
+                </a>
+                <a href="#doar" class="px-8 py-3 bg-white text-brand-blue font-medium rounded-full border border-gray-200 shadow-sm hover:shadow-md transition transform hover:-translate-y-1">
+                    Como Ajudar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Weekly Schedule & Activities -->
+    <section id="atividades" class="py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Cronograma Semanal</h2>
+                <p class="text-brand-muted max-w-xl mx-auto">Participe de nossos encontros presenciais ou acompanhe as transmissões online. Nossas atividades são totalmente gratuitas.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Activity Card -->
+                <div class="bg-white border border-gray-100 p-8 rounded-2xl hover-card">
+                    <div class="text-brand-blue font-bold tracking-wider text-sm mb-2 uppercase">Segunda-feira</div>
+                    <h3 class="text-xl font-bold mb-3">Triagem Fraterna</h3>
+                    <p class="text-gray-600 text-sm mb-4">Acolhimento e orientação para pessoas em busca de tratamento espiritual ou inserção nas atividades da casa.</p>
+                    <div class="text-sm font-medium text-gray-800 bg-blue-50 inline-block px-3 py-1 rounded-full">19h45</div>
+                </div>
+
+                <div class="bg-white border border-gray-100 p-8 rounded-2xl hover-card">
+                    <div class="text-brand-blue font-bold tracking-wider text-sm mb-2 uppercase">Terça-feira</div>
+                    <h3 class="text-xl font-bold mb-3">Reunião Pública</h3>
+                    <p class="text-gray-600 text-sm mb-4">Palestras abertas, preces, vibrações coletivas e passes magnéticos. Evento presencial com transmissão online.</p>
+                    <div class="text-sm font-medium text-gray-800 bg-blue-50 inline-block px-3 py-1 rounded-full">19h45</div>
+                </div>
+
+                <div class="bg-white border border-gray-100 p-8 rounded-2xl hover-card">
+                    <div class="text-brand-blue font-bold tracking-wider text-sm mb-2 uppercase">Quarta-feira</div>
+                    <h3 class="text-xl font-bold mb-3">Tratamento Espiritual</h3>
+                    <p class="text-gray-600 text-sm mb-4">Sessões agendadas de tratamento espiritual e aulas de desenvolvimento mediúnico (Escola de Médiuns).</p>
+                    <div class="text-sm font-medium text-gray-800 bg-blue-50 inline-block px-3 py-1 rounded-full">19h45</div>
+                </div>
+                
+                <div class="bg-white border border-gray-100 p-8 rounded-2xl hover-card">
+                    <div class="text-brand-blue font-bold tracking-wider text-sm mb-2 uppercase">Sábado</div>
+                    <h3 class="text-xl font-bold mb-3">Infância e Juventude</h3>
+                    <p class="text-gray-600 text-sm mb-4">Tratamento Infantil, Mocidade Espírita, Evangelização Infantil e Campanha Chico Xavier (empréstimo de livros).</p>
+                    <div class="text-sm font-medium text-gray-800 bg-blue-50 inline-block px-3 py-1 rounded-full">A partir de 08h15</div>
+                </div>
+
+                <div class="bg-white border border-gray-100 p-8 rounded-2xl hover-card">
+                    <div class="text-brand-blue font-bold tracking-wider text-sm mb-2 uppercase">Domingo</div>
+                    <h3 class="text-xl font-bold mb-3">Campanha Auta de Souza</h3>
+                    <p class="text-gray-600 text-sm mb-4">Arrecadação de alimentos não perecíveis de porta em porta para famílias carentes. Junte-se aos nossos tarefeiros aos domingos.</p>
+                    <div class="text-sm font-medium text-gray-800 bg-blue-50 inline-block px-3 py-1 rounded-full">09h00</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Institutional Structure -->
+    <section id="institutos" class="py-20 px-4 bg-gray-50 border-y border-gray-100">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Estrutura e Institutos</h2>
+                <p class="text-brand-muted max-w-xl mx-auto">Nossas atividades estão divididas em departamentos especializados para melhor atender a comunidade.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start gap-5 hover-card">
+                    <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 text-brand-blue">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Instituto da Caridade</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">Coordena a assistência social, auxílio a famílias vulneráveis, distribuição de alimentos e campanhas fraternas.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start gap-5 hover-card">
+                    <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 text-brand-blue">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Instituto da Criança e do Jovem</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">Gerencia a Evangelização Infantil e a Mocidade Espírita, focando na educação moral cristã para os jovens.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start gap-5 hover-card">
+                    <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 text-brand-blue">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Esclarecimento e Divulgação</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">Orientação familiar, ciclos de estudos, biblioteca espírita, livraria e difusão da doutrina em mídias digitais.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start gap-5 hover-card">
+                    <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 text-brand-blue">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Instituto da Mediunidade</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">Conduz a Escola de Médiuns e coordena o amparo mediúnico nas salas de tratamento espiritual da casa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Volunteer/Donate CTA Section -->
+    <section id="doar" class="py-24 px-4 bg-brand-blue text-white relative overflow-hidden">
+        <!-- Abstract background pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+        
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">Pratique o Bem. Envolva-se.</h2>
+                <p class="text-blue-100 max-w-2xl mx-auto text-lg">A manutenção da nossa casa e das obras sociais depende inteiramente da união e generosidade de nossos voluntários e doadores. Saiba como fazer a diferença.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Campaign Card 1 -->
+                <div class="bg-white text-gray-900 rounded-2xl p-8 hover-card shadow-xl">
+                    <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Campanha Auta de Souza</h3>
+                    <p class="text-gray-600 mb-6 text-sm">Arrecadação de alimentos não perecíveis de porta em porta para famílias carentes. Junte-se aos nossos tarefeiros aos domingos.</p>
+                    <button class="w-full py-3 bg-brand-blue text-white rounded-xl font-medium hover:bg-brand-blueDark transition">
+                        Quero ser Voluntário
+                    </button>
+                </div>
+
+                <!-- Campaign Card 2 -->
+                <div class="bg-white text-gray-900 rounded-2xl p-8 hover-card shadow-xl border-t-4 border-rose-500">
+                    <div class="w-14 h-14 bg-rose-100 text-rose-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Madre Tereza de Calcutá</h3>
+                    <p class="text-gray-600 mb-6 text-sm">Em defesa da vida. Apoio a gestantes e mães em situação de vulnerabilidade com enxovais, alimentos e amparo fraterno.</p>
+                    <button class="w-full py-3 bg-brand-blue text-white rounded-xl font-medium hover:bg-brand-blueDark transition">
+                        Doar Enxovais
+                    </button>
+                </div>
+
+                <!-- Financial Donation Card -->
+                <div class="bg-gray-900 text-white rounded-2xl p-8 hover-card shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-blue rounded-bl-full opacity-20"></div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-3">Doação Financeira</h3>
+                        <p class="text-gray-300 mb-8 text-sm">Sua contribuição ajuda a manter nossas portas abertas e sustenta nossos projetos de assistência social.</p>
+                        
+                        <div class="bg-gray-800 p-5 rounded-xl border border-gray-700 mb-4">
+                            <div class="text-xs text-gray-400 uppercase tracking-wider mb-1 font-semibold">Chave PIX (CNPJ)</div>
+                            <div class="text-lg font-mono font-bold text-white select-all">12.345.678/0001-90</div>
+                        </div>
+                        
+                        <div class="text-xs text-gray-400 text-center">
+                            Banco Itaú • Agência 1234 • CC 56789-0<br>
+                            Grupo Espírita Paulo de Tarso
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 px-4 border-t border-gray-800 text-sm">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+            <div>
+                <h4 class="text-white text-xl font-bold mb-4 font-heading tracking-wider">GEPT</h4>
+                <p class="mb-4 text-gray-500">Grupo Espírita Paulo de Tarso<br>Sede Obras Sociais</p>
+                <div class="flex space-x-4">
+                    <a href="https://facebook.com/osgept" class="hover:text-white transition">Facebook</a>
+                    <a href="https://www.instagram.com/gepaulodetarso/" class="hover:text-white transition">Instagram</a>
+                    <a href="https://www.youtube.com/user/osgept" class="hover:text-white transition">YouTube</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Links Úteis</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-brand-blue transition">Início</a></li>
+                    <li><a href="#institutos" class="hover:text-brand-blue transition">Institutos</a></li>
+                    <li><a href="#atividades" class="hover:text-brand-blue transition">Atividades</a></li>
+                    <li><a href="#" class="hover:text-brand-blue transition">Política de Privacidade</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Contato</h4>
+                <p class="mb-2">Av. Mário Nunes, 174<br>Pres. Roosevelt - Uberlândia/MG</p>
+                <a href="/contato/" class="inline-block mt-3 px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 transition">Enviar Mensagem</a>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto mt-12 pt-8 border-t border-gray-800 text-center text-xs">
+            © 2026 – Grupo Espírita Paulo de Tarso. Todos os direitos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>

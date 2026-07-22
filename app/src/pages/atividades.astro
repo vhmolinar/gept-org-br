@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Atividades e Campanhas">
+    <section class="py-20 px-4 bg-white min-h-screen">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Atividades e Campanhas</h1>
+                <p class="text-brand-muted max-w-xl mx-auto text-lg">Conheça nosso cronograma, nossas ações sociais e saiba como você pode se engajar nestas causas.</p>
+            </div>
+
+            <h2 class="text-3xl font-bold mb-8 border-b pb-4">Cronograma Semanal</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+                <div class="bg-gray-50 border border-gray-100 p-6 rounded-2xl hover-card">
+                    <div class="text-brand-blue font-bold text-sm mb-2 uppercase">Segunda-feira • 19h45</div>
+                    <h3 class="text-xl font-bold mb-2">Triagem Fraterna</h3>
+                    <p class="text-gray-600 text-sm">Acolhimento e orientação para quem busca tratamento espiritual.</p>
+                </div>
+                <div class="bg-gray-50 border border-gray-100 p-6 rounded-2xl hover-card">
+                    <div class="text-brand-blue font-bold text-sm mb-2 uppercase">Terça-feira • 19h45</div>
+                    <h3 class="text-xl font-bold mb-2">Reunião Pública</h3>
+                    <p class="text-gray-600 text-sm">Palestras abertas e passes magnéticos (presencial e online).</p>
+                </div>
+                <div class="bg-gray-50 border border-gray-100 p-6 rounded-2xl hover-card">
+                    <div class="text-brand-blue font-bold text-sm mb-2 uppercase">Quarta-feira • 19h45</div>
+                    <h3 class="text-xl font-bold mb-2">Tratamento Espiritual</h3>
+                    <p class="text-gray-600 text-sm">Sessões agendadas de tratamento e passes específicos.</p>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold mb-8 border-b pb-4">Campanhas Assistenciais e de Esclarecimento</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Auta de Souza -->
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover-card flex flex-col">
+                    <div class="bg-orange-50 p-8 border-b border-orange-100 text-center">
+                        <div class="w-16 h-16 bg-white text-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Campanha Auta de Souza</h3>
+                        <p class="text-orange-600 font-medium mt-1">Domingos às 09h00</p>
+                    </div>
+                    <div class="p-8 flex-grow">
+                        <p class="text-gray-600 mb-6 leading-relaxed">A Campanha de Fraternidade Auta de Souza consiste na arrecadação de donativos de porta em porta e na distribuição de mensagens de consolo e otimismo, ajudando famílias carentes cadastradas.</p>
+                        <a href="/campanha-auta-de-souza" class="block text-center w-full py-3 bg-gray-900 text-white font-medium rounded-xl hover:bg-gray-800 transition">Conheça mais</a>
+                    </div>
+                </div>
+
+                <!-- Madre Tereza -->
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover-card flex flex-col">
+                    <div class="bg-rose-50 p-8 border-b border-rose-100 text-center">
+                        <div class="w-16 h-16 bg-white text-rose-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Campanha Madre Tereza</h3>
+                        <p class="text-rose-600 font-medium mt-1">Em Defesa da Vida</p>
+                    </div>
+                    <div class="p-8 flex-grow">
+                        <p class="text-gray-600 mb-6 leading-relaxed">Programa contínuo focado em apoiar gestantes e mães em situação de vulnerabilidade, fornecendo enxovais, suplementos alimentares e suporte emocional e espiritual durante e após a gestação.</p>
+                        <a href="/campanha-madre-tereza" class="block text-center w-full py-3 bg-brand-blue text-white font-medium rounded-xl hover:bg-brand-blueDark transition">Conheça mais</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-blue-50 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between border border-blue-100">
+                <div class="mb-6 md:mb-0 md:mr-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Cursos e Mocidade Espírita</h3>
+                    <p class="text-gray-600">Aos sábados, oferecemos turmas de Evangelização Infantil, Mocidade (jovens) e grupos de estudos sistematizados para adultos.</p>
+                </div>
+                <button class="whitespace-nowrap px-8 py-3 bg-white text-brand-blue font-bold rounded-xl shadow hover:shadow-md transition">Inscreva-se</button>
+            </div>
+        </div>
+    </section>
+</Layout>

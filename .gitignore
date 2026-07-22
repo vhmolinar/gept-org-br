@@ -1,0 +1,11 @@
+node_modules/
+.DS_Store
+dist/
+.env
+.env.*
+!.env.example
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+app/.astro/
+app/dist/

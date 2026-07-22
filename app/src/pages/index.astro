@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Início">
+    <!-- 1. Hero Section -->
+    <section class="relative py-32 px-4 overflow-hidden" id="hero-carousel">
+        <!-- Background images -->
+        <div class="absolute inset-0 z-0 bg-gray-800 overflow-hidden">
+            <!-- Slide 1 -->
+            <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-100">
+                <div class="absolute inset-0 bg-cover bg-center blur-2xl opacity-50 scale-110" style="background-image: url('/images/activities/coral-escola.jpg');"></div>
+                <div class="absolute inset-0 bg-contain bg-no-repeat bg-center drop-shadow-2xl scale-125" style="background-image: url('/images/activities/coral-escola.jpg');"></div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-0">
+                <div class="absolute inset-0 bg-cover bg-center blur-2xl opacity-50 scale-110" style="background-image: url('/images/activities/campanha-camilo-castelo-branco.png');"></div>
+                <div class="absolute inset-0 bg-contain bg-no-repeat bg-center drop-shadow-2xl scale-125" style="background-image: url('/images/activities/campanha-camilo-castelo-branco.png');"></div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-0">
+                <div class="absolute inset-0 bg-cover bg-center blur-2xl opacity-50 scale-110" style="background-image: url('/images/activities/campanha-madre-tereza.png');"></div>
+                <div class="absolute inset-0 bg-contain bg-no-repeat bg-center drop-shadow-2xl scale-125" style="background-image: url('/images/activities/campanha-madre-tereza.png');"></div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-0">
+                <div class="absolute inset-0 bg-cover bg-center blur-2xl opacity-50 scale-110" style="background-image: url('/images/activities/escola.jpg');"></div>
+                <div class="absolute inset-0 bg-contain bg-no-repeat bg-center drop-shadow-2xl scale-125" style="background-image: url('/images/activities/escola.jpg');"></div>
+            </div>
+            <!-- Slide 5 -->
+            <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-0">
+                <div class="absolute inset-0 bg-cover bg-center blur-2xl opacity-50 scale-110" style="background-image: url('/images/activities/mocidade.jpeg');"></div>
+                <div class="absolute inset-0 bg-contain bg-no-repeat bg-center drop-shadow-2xl scale-125" style="background-image: url('/images/activities/mocidade.jpeg');"></div>
+            </div>
+            <!-- Slide 6 -->
+            <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-0">
+                <div class="absolute inset-0 bg-cover bg-center blur-2xl opacity-50 scale-110" style="background-image: url('/images/activities/posto-euripedes.png');"></div>
+                <div class="absolute inset-0 bg-contain bg-no-repeat bg-center drop-shadow-2xl scale-125" style="background-image: url('/images/activities/posto-euripedes.png');"></div>
+            </div>
+            <!-- Overlay to make text readable -->
+            <div class="absolute inset-0 bg-black/20"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight tracking-tight [text-shadow:_0_4px_24px_rgba(0,0,0,0.9),_0_1px_3px_rgba(0,0,0,1)]">
+                Grupo Espírita Paulo de Tarso
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-100 mb-10 max-w-2xl mx-auto leading-relaxed font-light [text-shadow:_0_4px_16px_rgba(0,0,0,0.8),_0_1px_2px_rgba(0,0,0,1)]">
+                Deus, Cristo e Caridade
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 w-full">
+                <a href="/tratamento-espiritual" class="px-8 py-3 bg-brand-blue text-white font-medium rounded-full shadow-lg hover:bg-brand-blueDark transition transform hover:-translate-y-1 border border-brand-blue">
+                    Tratamento espiritual
+                </a>
+                <a href="/atividades" class="px-8 py-3 bg-white/10 backdrop-blur-sm text-white font-medium rounded-full border border-white/30 shadow-sm hover:bg-white/20 transition transform hover:-translate-y-1">
+                    Ver Nossa Programação
+                </a>
+                <a href="/institutos" class="px-8 py-3 bg-white/10 backdrop-blur-sm text-white font-medium rounded-full border border-white/30 shadow-sm hover:bg-white/20 transition transform hover:-translate-y-1">
+                    Nossos Institutos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.carousel-slide');
+            if (slides.length === 0) return;
+            let current = 0;
+            setInterval(() => {
+                slides[current].classList.replace('opacity-100', 'opacity-0');
+                current = (current + 1) % slides.length;
+                slides[current].classList.replace('opacity-0', 'opacity-100');
+            }, 4000);
+        });
+    </script>
+
+    <!-- 4. Volunteer/Donate CTA Section -->
+    <section class="py-24 px-4 bg-brand-blue text-white relative overflow-hidden mt-12">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+        
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">Apoie nossas atividades sociais</h2>
+                <p class="text-blue-100 max-w-2xl mx-auto text-lg">A manutenção da nossa casa e das obras sociais depende inteiramente da união e generosidade de nossos voluntários e doadores. Saiba como fazer a diferença.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Campanha Auta de Souza Card -->
+                <div class="bg-white text-gray-900 rounded-2xl p-8 hover-card shadow-2xl relative overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <img src="/images/C.F.A.S-Logo.png" alt="CFAS" class="h-16 mb-4">
+                        <h3 class="text-2xl font-bold mb-3">Campanha Auta de Souza</h3>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">Ajude-nos a levar consolo espiritual e alimento material de porta em porta. Saiba como ser um tarefeiro ou doador para as famílias carentes que assistimos.</p>
+                    </div>
+                    <a href="/campanha-auta-de-souza" class="inline-block text-center w-full py-3 bg-brand-blue text-white font-medium rounded-xl hover:bg-brand-blueDark transition">
+                        Conheça o Projeto
+                    </a>
+                </div>
+
+                <!-- Financial Donation Card -->
+                <div class="bg-gray-900 text-white rounded-2xl p-8 hover-card shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-blue rounded-bl-full opacity-20"></div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-3">Doação Financeira</h3>
+                        <p class="text-gray-300 mb-8 text-sm">Sua contribuição ajuda a manter nossas portas abertas e sustenta nossos projetos de assistência social.</p>
+                        
+                        <div class="bg-gray-800 p-5 rounded-xl border border-gray-700 mb-4">
+                            <div class="text-xs text-gray-400 uppercase tracking-wider mb-1 font-semibold">Chave PIX (Celular)</div>
+                            <div class="text-lg font-mono font-bold text-white select-all">3499879-4774</div>
+                        </div>
+                        
+                        <div class="text-xs text-gray-400 text-center">
+                            Favorecido:<br>
+                            <span class="font-semibold text-white text-sm">Lar Fabiano de Cristo</span><br>
+                            (Obras sociais do Grupo Espírita Paulo de Tarso)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>
