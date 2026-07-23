@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://gept-org-br.web.app',
+  site: 'https://gept.org.br',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()]
