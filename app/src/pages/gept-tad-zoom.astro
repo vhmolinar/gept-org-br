@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+    title="Tratamento à distância" 
+    description="Acesse a sala do Zoom para participar do tratamento"
+>
+    <div class="py-32 px-4 text-center min-h-[50vh] flex flex-col items-center justify-center">
+        <div class="w-16 h-16 border-4 border-brand-blue border-t-transparent rounded-full animate-spin mb-6"></div>
+        <h1 class="text-3xl font-bold mb-4 text-gray-800">Redirecionando para a sala...</h1>
+        <p class="text-gray-600 max-w-md mx-auto">
+            Aguarde um instante enquanto redirecionamos você para a página de tratamento.
+        </p>
+        <p class="mt-8 text-sm text-gray-500">
+            <a href="/tratamento-espiritual#acesso-zoom" class="text-brand-blue hover:underline">
+                Clique aqui se não for redirecionado automaticamente
+            </a>
+        </p>
+    </div>
+    
+    <script>
+        // Redirecionamento no lado do cliente garante que os robôs do Facebook/WhatsApp
+        // leiam as tags Open Graph desta página antes do usuário ser redirecionado.
+        window.location.replace('/tratamento-espiritual#acesso-zoom');
+    </script>
+</Layout>
