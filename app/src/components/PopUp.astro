@@ -59,16 +59,18 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    function initPopup() {
         const popup = document.getElementById('promo-popup');
         const backdrop = document.getElementById('popup-backdrop');
         const content = document.getElementById('popup-content');
         const closeBtn = document.getElementById('popup-close');
         
+        if (!popup || !content) return;
+        
         // Check sessionStorage
         if (!sessionStorage.getItem('popupShown')) {
-            // Show popup
-            if (popup) {
+            // Show popup with a small delay to ensure rendering is complete
+            requestAnimationFrame(() => {
                 popup.classList.remove('hidden');
                 popup.classList.add('flex');
                 
@@ -80,7 +82,7 @@
                 
                 // Set flag so it doesn't show again this session
                 sessionStorage.setItem('popupShown', 'true');
-            }
+            });
         }
         
         const closePopup = () => {
@@ -94,5 +96,12 @@
         
         if (closeBtn) closeBtn.addEventListener('click', closePopup);
         if (backdrop) backdrop.addEventListener('click', closePopup);
-    });
+    }
+
+    // Try to init immediately if DOM is ready, otherwise wait
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPopup);
+    } else {
+        initPopup();
+    }
 </script>
