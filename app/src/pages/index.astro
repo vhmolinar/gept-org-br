@@ -103,6 +103,39 @@ import PopUp from '../components/PopUp.astro';
                     slideInterval = setInterval(nextSlide, 7000);
                 });
             });
+
+            // Touch Swipe Gestures for Mobile
+            const carousel = document.getElementById('main-carousel');
+            if (carousel) {
+                let touchStartX = 0;
+                let touchEndX = 0;
+                const minSwipeDistance = 40; // minimum distance in px to register a swipe
+
+                carousel.addEventListener('touchstart', (e) => {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, { passive: true });
+
+                carousel.addEventListener('touchend', (e) => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipe();
+                }, { passive: true });
+
+                const handleSwipe = () => {
+                    const swipeDistance = touchEndX - touchStartX;
+                    if (Math.abs(swipeDistance) > minSwipeDistance) {
+                        clearInterval(slideInterval);
+                        if (swipeDistance < 0) {
+                            // Swiped left -> next slide
+                            nextSlide();
+                        } else {
+                            // Swiped right -> previous slide
+                            const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+                            goToSlide(prevIndex);
+                        }
+                        slideInterval = setInterval(nextSlide, 7000);
+                    }
+                };
+            }
         });
     </script>
 
