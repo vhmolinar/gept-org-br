@@ -1,0 +1,33 @@
+---
+export interface Props {
+    transparent?: boolean;
+}
+const { transparent = false } = Astro.props;
+---
+<!-- Zoom Box (Now "Tratamento à Distância") -->
+<div id="acesso-zoom" class={transparent ? "" : "bg-blue-50 border border-blue-100 rounded-3xl p-5 md:p-8 shadow-lg shadow-blue-100/50"}>
+    <div class="text-center mb-6">
+        <h2 class="text-2xl md:text-3xl font-bold mb-2 text-gray-800">Tratamento à Distância</h2>
+        <div class="text-xs md:text-sm font-semibold text-brand-blue uppercase tracking-wider">Quartas-feiras • 20h00</div>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-4 md:gap-6">
+        <!-- Primeira Sala -->
+        <div class="bg-white p-6 rounded-2xl border border-blue-100 shadow-sm text-left flex flex-col">
+            <h4 class="font-bold text-gray-800 text-lg mb-2">Primeira Sala (aulas 1, 2 e 3)</h4>
+            <p class="text-sm text-gray-600 mb-6 flex-grow">Destinada para pacientes em fase inicial de tratamento.</p>
+            <a href="https://us02web.zoom.us/j/9017686158" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 bg-brand-blue text-white px-4 py-3 rounded-xl font-semibold text-sm hover:bg-brand-blueDark transition w-full mt-auto">
+                Acessar Primeira Sala
+            </a>
+        </div>
+
+        <!-- Segunda Sala -->
+        <div class="bg-white p-6 rounded-2xl border border-blue-100 shadow-sm text-left flex flex-col">
+            <h4 class="font-bold text-gray-800 text-lg mb-2">Segunda Sala (outros temas)</h4>
+            <p class="text-sm text-gray-600 mb-6 flex-grow">Para pacientes em estágio continuado.</p>
+            <a href="https://us02web.zoom.us/j/83321381242?pwd=Q0NRdVNkelVYL1RWN0s4Z3dFWnNOdz09" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 bg-brand-blue text-white px-4 py-3 rounded-xl font-semibold text-sm hover:bg-brand-blueDark transition w-full mt-auto">
+                Acessar Segunda Sala
+            </a>
+        </div>
+    </div>
+</div>
