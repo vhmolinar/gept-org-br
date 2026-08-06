@@ -8,97 +8,68 @@ import PopUp from '../components/PopUp.astro';
     description="Bem-vindo ao Grupo Espírita Paulo de Tarso (GEPT) em Uberlândia, MG. Promovemos o estudo sistematizado da Doutrina Espírita, o tratamento espiritual, palestras e obras sociais."
 >
     <PopUp />
-    <!-- 1. Hero Section -->
-    <section class="relative pt-12 md:pt-24 pb-12 md:pb-16 px-4 bg-gray-50 overflow-hidden">
-        <div class="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+    <!-- 1. Hero Section (Unified Carousel) -->
+    <section class="relative pt-6 md:pt-12 pb-12 md:pb-16 px-4 bg-gray-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10">
             
-            <!-- Left Column: Title + Carousel -->
-            <div class="flex flex-col">
-                <div class="text-center lg:text-left mb-8 md:mb-10 mt-2 md:mt-0">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight text-gray-800">
-                        Grupo Espírita <br class="hidden lg:block" /> Paulo de Tarso
-                    </h1>
-                    <p class="text-xl md:text-2xl text-gray-500 font-light">
-                        Deus, Cristo e Caridade
-                    </p>
+            <!-- Mobile-only title above banner -->
+            <h1 class="md:hidden text-xl font-bold text-gray-800 mb-4 px-1">Grupo Espírita Paulo de Tarso</h1>
+
+            <!-- Unified Carousel -->
+            <div class="w-full aspect-[4/5] sm:aspect-[4/3] md:aspect-[21/9] bg-gray-100 md:rounded-[2.5rem] rounded-3xl overflow-hidden shadow-2xl relative border border-gray-200 group" id="main-carousel">
+                
+                <!-- Slide 0: Cursos -->
+                <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-100 flex items-end">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/images/promo-cursos-banner.jpg');"></div>
+                    
+                    <div class="relative z-10 p-6 md:p-10 mb-6 mx-4 md:mb-12 md:mx-12 w-full max-w-2xl transform transition-transform duration-700 translate-y-0">
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4 drop-shadow-lg">Conheça o Espiritismo</h2>
+                        <p class="text-base md:text-xl text-gray-50 mb-6 md:mb-8 font-medium drop-shadow-md">Estude o Espiritismo através de cursos gratuitos e acessíveis para toda a família.</p>
+                        <a href="/cursos-espiritismo" class="inline-block bg-white text-[#00334e] hover:bg-gray-100 font-bold px-6 py-3 rounded-full transition-transform hover:-translate-y-1 shadow-lg">Inscreva-se Agora</a>
+                    </div>
+                </div>
+
+                <!-- Slide 1: Tratamento Espiritual -->
+                <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-0 flex items-end">
+                    <div class="absolute inset-0 bg-cover bg-center brightness-75" style="background-image: url('/images/promo-tratamento-banner.jpg');"></div>
+                    
+                    <div class="relative z-10 p-6 md:p-10 mb-6 mx-4 md:mb-12 md:mx-12 w-full max-w-2xl transform transition-transform duration-700 translate-y-0">
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4 drop-shadow-lg">Tratamento Espiritual</h2>
+                        <p class="text-base md:text-xl text-gray-50 mb-6 md:mb-8 font-medium drop-shadow-md">Conjunto de práticas com objetivo de promover o bem estar físico, mental e espiritual.</p>
+                        <a href="/tratamento-espiritual" class="inline-block bg-white text-[#00334e] hover:bg-gray-100 font-bold px-6 py-3 rounded-full transition-transform hover:-translate-y-1 shadow-lg">Ver Horários</a>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Evangelização Infantil -->
+                <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-0 flex items-end">
+                    <div class="absolute inset-0 bg-cover bg-center brightness-75 saturate-50" style="background-image: url('/images/promo-evangelizacao-banner.jpg');"></div>
+                    
+                    <div class="relative z-10 p-6 md:p-10 mb-6 mx-4 md:mb-12 md:mx-12 w-full max-w-2xl transform transition-transform duration-700 translate-y-0">
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4 drop-shadow-lg">Evangelização Infantil</h2>
+                        <p class="text-base md:text-xl text-gray-50 mb-6 md:mb-8 font-medium drop-shadow-md">Amparando o desenvolvimento da criança sob a luz do Cristo para o mundo de amanhã.</p>
+                        <a href="/evangelizacao-infantil" class="inline-block bg-white text-[#00334e] hover:bg-gray-100 font-bold px-6 py-3 rounded-full transition-transform hover:-translate-y-1 shadow-lg">Saiba Mais</a>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Mocidade -->
+                <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-0 flex items-end">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/images/activities/mocidade.jpeg');"></div>
+                    
+                    <div class="relative z-10 p-6 md:p-10 mb-6 mx-4 md:mb-12 md:mx-12 w-full max-w-2xl transform transition-transform duration-700 translate-y-0">
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4 drop-shadow-lg">Mocidade Espírita</h2>
+                        <p class="text-base md:text-xl text-gray-50 mb-6 md:mb-8 font-medium drop-shadow-md">Núcleo voltado para jovens a partir de 12 anos. Confraternização, estudos doutrinários e ações no bem.</p>
+                        <a href="/mocidade" class="inline-block bg-white text-[#00334e] hover:bg-gray-100 font-bold px-6 py-3 rounded-full transition-transform hover:-translate-y-1 shadow-lg">Conheça</a>
+                    </div>
                 </div>
                 
-                <!-- Boxed Carousel -->
-                <div class="w-full aspect-video md:aspect-[16/9] bg-gray-900 rounded-[2.5rem] overflow-hidden shadow-2xl relative border border-gray-200" id="hero-carousel">
-                    <!-- Slide 1 -->
-                    <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-100">
-                        <div class="absolute inset-0 bg-cover bg-center blur-2xl opacity-50 scale-110" style="background-image: url('/images/activities/coral-escola.jpg');"></div>
-                        <div class="absolute inset-0 bg-contain bg-no-repeat bg-center" style="background-image: url('/images/activities/coral-escola.jpg');"></div>
-                    </div>
-                    <!-- Slide 2 -->
-                    <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-0">
-                        <div class="absolute inset-0 bg-cover bg-center blur-2xl opacity-50 scale-110" style="background-image: url('/images/activities/campanha-camilo-castelo-branco.png');"></div>
-                        <div class="absolute inset-0 bg-contain bg-no-repeat bg-center" style="background-image: url('/images/activities/campanha-camilo-castelo-branco.png');"></div>
-                    </div>
-                    <!-- Slide 3 -->
-                    <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-0">
-                        <div class="absolute inset-0 bg-cover bg-center blur-2xl opacity-50 scale-110" style="background-image: url('/images/activities/campanha-madre-tereza.png');"></div>
-                        <div class="absolute inset-0 bg-contain bg-no-repeat bg-center" style="background-image: url('/images/activities/campanha-madre-tereza.png');"></div>
-                    </div>
-                    <!-- Slide 4 -->
-                    <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-0">
-                        <div class="absolute inset-0 bg-cover bg-center blur-2xl opacity-50 scale-110" style="background-image: url('/images/activities/escola.jpg');"></div>
-                        <div class="absolute inset-0 bg-contain bg-no-repeat bg-center" style="background-image: url('/images/activities/escola.jpg');"></div>
-                    </div>
-                    <!-- Slide 5 -->
-                    <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-0">
-                        <div class="absolute inset-0 bg-cover bg-center blur-2xl opacity-50 scale-110" style="background-image: url('/images/activities/mocidade.jpeg');"></div>
-                        <div class="absolute inset-0 bg-contain bg-no-repeat bg-center" style="background-image: url('/images/activities/mocidade.jpeg');"></div>
-                    </div>
-                    <!-- Slide 6 -->
-                    <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-0">
-                        <div class="absolute inset-0 bg-cover bg-center blur-2xl opacity-50 scale-110" style="background-image: url('/images/activities/posto-euripedes.png');"></div>
-                        <div class="absolute inset-0 bg-contain bg-no-repeat bg-center" style="background-image: url('/images/activities/posto-euripedes.png');"></div>
-                    </div>
+                <!-- Carousel Indicators -->
+                <div class="absolute bottom-6 right-6 md:bottom-8 md:right-8 flex gap-3 z-20">
+                    <button class="carousel-dot w-3 h-3 md:w-4 md:h-4 rounded-full bg-white transition-opacity opacity-100 hover:scale-110 drop-shadow-md border border-gray-200" aria-label="Slide 1"></button>
+                    <button class="carousel-dot w-3 h-3 md:w-4 md:h-4 rounded-full bg-white transition-opacity opacity-40 hover:opacity-70 hover:scale-110 drop-shadow-md border border-gray-200" aria-label="Slide 2"></button>
+                    <button class="carousel-dot w-3 h-3 md:w-4 md:h-4 rounded-full bg-white transition-opacity opacity-40 hover:opacity-70 hover:scale-110 drop-shadow-md border border-gray-200" aria-label="Slide 3"></button>
+                    <button class="carousel-dot w-3 h-3 md:w-4 md:h-4 rounded-full bg-white transition-opacity opacity-40 hover:opacity-70 hover:scale-110 drop-shadow-md border border-gray-200" aria-label="Slide 4"></button>
                 </div>
-            </div>
 
-            <!-- Right Column: Navigation Cards -->
-            <div class="grid sm:grid-cols-2 gap-4 lg:gap-6 relative z-20">
-                <!-- Nossos Cursos -->
-                <a href="/cursos-espiritismo" class="group bg-white rounded-3xl p-6 shadow-xl shadow-gray-200/40 border border-gray-100 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 relative overflow-hidden flex flex-col h-full">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-blue/5 rounded-bl-[100px] transition-transform group-hover:scale-110"></div>
-                    <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-2xl flex items-center justify-center mb-4 relative z-10">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-brand-blue transition-colors relative z-10">Estude o Espiritismo</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed flex-grow relative z-10">Conheça o Espiritismo através de cursos gratuitos e acessíveis para toda família</p>
-                </a>
-
-                <!-- Tratamento Espiritual -->
-                <a href="/tratamento-espiritual" class="group bg-white rounded-3xl p-6 shadow-xl shadow-gray-200/40 border border-gray-100 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 relative overflow-hidden flex flex-col h-full">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-blue/5 rounded-bl-[100px] transition-transform group-hover:scale-110"></div>
-                    <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-2xl flex items-center justify-center mb-4 relative z-10">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-brand-blue transition-colors relative z-10">Tratamento Espiritual</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed flex-grow relative z-10">Conjunto de práticas com objetivo de promover o bem estar físico, mental e espiritual</p>
-                </a>
-
-                <!-- Evangelização Infantil -->
-                <a href="/evangelizacao-infantil" class="group bg-white rounded-3xl p-6 shadow-xl shadow-gray-200/40 border border-gray-100 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 relative overflow-hidden flex flex-col h-full">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-blue/5 rounded-bl-[100px] transition-transform group-hover:scale-110"></div>
-                    <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-2xl flex items-center justify-center mb-4 relative z-10">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-brand-blue transition-colors relative z-10">Evangelização Infantil</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed flex-grow relative z-10">Amparando o desenvolvimento da criança sob a luz do Cristo para o mundo de amanhã.</p>
-                </a>
-
-                <!-- Mocidade -->
-                <a href="/mocidade" class="group bg-white rounded-3xl p-6 shadow-xl shadow-gray-200/40 border border-gray-100 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 relative overflow-hidden flex flex-col h-full">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-blue/5 rounded-bl-[100px] transition-transform group-hover:scale-110"></div>
-                    <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-2xl flex items-center justify-center mb-4 relative z-10">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-brand-blue transition-colors relative z-10">Mocidade</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed flex-grow relative z-10">Núcleo voltado para jovens a partir de 12 anos. Confraternização, estudos doutrinários e ações no bem.</p>
-                </a>
             </div>
         </div>
     </section>
@@ -106,13 +77,35 @@ import PopUp from '../components/PopUp.astro';
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.carousel-dot');
             if (slides.length === 0) return;
-            let current = 0;
-            setInterval(() => {
-                slides[current].classList.replace('opacity-100', 'opacity-0');
-                current = (current + 1) % slides.length;
-                slides[current].classList.replace('opacity-0', 'opacity-100');
-            }, 4000);
+            
+            let currentSlide = 0;
+            let slideInterval;
+
+            const goToSlide = (index) => {
+                slides[currentSlide].classList.replace('opacity-100', 'opacity-0');
+                if(dots[currentSlide]) dots[currentSlide].classList.replace('opacity-100', 'opacity-40');
+                
+                currentSlide = index;
+                
+                slides[currentSlide].classList.replace('opacity-0', 'opacity-100');
+                if(dots[currentSlide]) dots[currentSlide].classList.replace('opacity-40', 'opacity-100');
+            };
+
+            const nextSlide = () => {
+                goToSlide((currentSlide + 1) % slides.length);
+            };
+
+            slideInterval = setInterval(nextSlide, 5000);
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    goToSlide(index);
+                    slideInterval = setInterval(nextSlide, 7000);
+                });
+            });
         });
     </script>
 
