@@ -67,23 +67,17 @@
         
         if (!popup || !content) return;
         
-        // Check sessionStorage
-        if (!sessionStorage.getItem('popupShown')) {
-            // Show popup with a small delay to ensure rendering is complete
-            requestAnimationFrame(() => {
-                popup.classList.remove('hidden');
-                popup.classList.add('flex');
-                
-                // Trigger animation
-                setTimeout(() => {
-                    content.classList.remove('scale-95', 'opacity-0');
-                    content.classList.add('scale-100', 'opacity-100');
-                }, 50);
-                
-                // Set flag so it doesn't show again this session
-                sessionStorage.setItem('popupShown', 'true');
-            });
-        }
+        // Show popup with a small delay to ensure rendering is complete
+        requestAnimationFrame(() => {
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+            
+            // Trigger animation
+            setTimeout(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 50);
+        });
         
         const closePopup = () => {
             content.classList.remove('scale-100', 'opacity-100');
