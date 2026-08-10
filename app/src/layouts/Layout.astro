@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import CampaignBanner from '../components/CampaignBanner.astro';
 
 interface Props {
 	title: string;
@@ -64,6 +65,9 @@ const ogImageURL = new URL(image, Astro.site || Astro.url);
     <div class="bg-gray-800 text-white text-sm py-2 px-4 text-center">
         Boas vindas ao Grupo Espírita Paulo de Tarso! Uberlândia/MG
     </div>
+
+    <!-- Dynamic Campaign Banner -->
+    <CampaignBanner />
 
     <!-- Header Navigation -->
     <header class="bg-white shadow-sm sticky top-0 z-50 relative">
