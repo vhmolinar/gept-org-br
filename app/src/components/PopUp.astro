@@ -14,7 +14,7 @@
         </button>
 
         <!-- Clickable Banner Area -->
-        <a href="/cursos-espiritismo#inscricao" class="block relative w-full aspect-[4/5] bg-cover bg-center group" style="background-image: url('/images/popup-bg.jpg');">
+        <a href="/cursos-espiritismo#inscricao" class="block relative w-full aspect-[4/5] bg-cover bg-center group" style="background-image: url('/images/popup-divulgacao-cursos-bg.jpg');">
             <!-- Gradient Overlay (Dark blue to cyan to match the poster) -->
             <div class="absolute inset-0 bg-gradient-to-t from-[#002235] via-[#004a63]/80 to-[#00334e]/70 group-hover:via-[#004a63]/70 transition-all duration-300"></div>
             
@@ -59,13 +59,47 @@
 </div>
 
 <script>
-    function initPopup() {
+    async function initPopup() {
         const popup = document.getElementById('promo-popup');
         const backdrop = document.getElementById('popup-backdrop');
         const content = document.getElementById('popup-content');
         const closeBtn = document.getElementById('popup-close');
         
         if (!popup || !content) return;
+
+        // Fetch campaigns JSON and validate expiration & status
+        try {
+            const response = await fetch('/data/campaigns.json');
+            if (!response.ok) return;
+            const data = await response.json();
+            const now = new Date();
+            const currentPath = window.location.pathname;
+
+            // Find active popup campaign valid for current page and time range
+            const validCampaign = data.campaigns.find((c: any) => {
+                if (!c.active || c.type !== 'popup') return false;
+                
+                // Expiration check
+                if (c.startDate && new Date(c.startDate) > now) return false;
+                if (c.expirationDate && new Date(c.expirationDate) < now) return false;
+
+                // Page targeting check
+                if (c.targetPages && !c.targetPages.includes('all')) {
+                    const matches = c.targetPages.some((p: string) => p === currentPath || (p === '/' && (currentPath === '' || currentPath === '/')));
+                    if (!matches) return false;
+                }
+
+                return true;
+            });
+
+            // If no valid campaign or campaign is expired, do not show popup
+            if (!validCampaign) {
+                return;
+            }
+        } catch (err) {
+            console.error('Erro ao verificar validade da campanha de pop-up:', err);
+            return;
+        }
         
         // Show popup with a small delay to ensure rendering is complete
         requestAnimationFrame(() => {

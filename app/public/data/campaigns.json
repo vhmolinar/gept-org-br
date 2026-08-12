@@ -1,0 +1,43 @@
+{
+  "campaigns": [
+    {
+      "id": "convite-cursos-2026",
+      "title": "Conheça o Espiritismo - Cursos 2026",
+      "active": true,
+      "type": "popup",
+      "startDate": "2026-08-01T00:00:00-03:00",
+      "expirationDate": "2026-08-31T23:59:59-03:00",
+      "targetPages": ["/"],
+      "content": {
+        "title": "Conheça o Espiritismo",
+        "subtitle": "Curso Presencial e Gratuito",
+        "questions": [
+          "De onde vim?",
+          "O que é a morte?",
+          "A reencarnação existe?"
+        ],
+        "startDateText": "Início: 15 de agosto",
+        "scheduleText": "Horário: 17h15 às 20h",
+        "ctaText": "CLIQUE AQUI E SE INSCREVA",
+        "ctaLink": "/cursos-espiritismo#inscricao",
+        "bgImage": "/images/popup-bg.jpg"
+      }
+    },
+    {
+      "id": "banner-boas-vindas-cursos",
+      "title": "Banner Topo - Inscrições Abertas Cursos",
+      "active": true,
+      "type": "banner",
+      "startDate": "2026-08-01T00:00:00-03:00",
+      "expirationDate": "2026-08-31T23:59:59-03:00",
+      "targetPages": ["all"],
+      "content": {
+        "text": "Inscrições abertas para os Cursos de Espiritismo! Início dia 15 de agosto.",
+        "ctaText": "Saiba mais",
+        "ctaLink": "/cursos-espiritismo#inscricao",
+        "bgColor": "#00334e",
+        "textColor": "#ffffff"
+      }
+    }
+  ]
+}

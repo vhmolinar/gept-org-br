@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import CampaignBanner from '../components/CampaignBanner.astro';
 
 interface Props {
 	title: string;
@@ -10,7 +11,7 @@ interface Props {
 const { 
     title,
     description = "Grupo Espírita Paulo de Tarso (GEPT) - Casa Espírita em Uberlândia, MG. Estudo, prática e difusão do Espiritismo, com tratamento espiritual e atividades solidárias.",
-    image = "/images/logo.png"
+    image = "/images/gept-logo-principal.png"
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url);
@@ -65,11 +66,14 @@ const ogImageURL = new URL(image, Astro.site || Astro.url);
         Boas vindas ao Grupo Espírita Paulo de Tarso! Uberlândia/MG
     </div>
 
+    <!-- Dynamic Campaign Banner -->
+    <CampaignBanner />
+
     <!-- Header Navigation -->
     <header class="bg-white shadow-sm sticky top-0 z-50 relative">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center relative z-20 bg-white">
             <a href="/" class="flex items-center gap-3">
-                <img src="/images/logo.png" alt="Logo GEPT" class="h-20 w-auto">
+                <img src="/images/gept-logo-principal.png" alt="Logo GEPT" class="h-20 w-auto">
                 <span class="text-sm md:text-lg font-bold text-gray-800 leading-tight">Grupo Espírita<br>Paulo de Tarso</span>
             </a>
             
