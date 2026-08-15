@@ -8,6 +8,7 @@ interface Props {
 	image?: string;
 	hideCampaignBanner?: boolean;
 	compactHeader?: boolean;
+	appendSiteName?: boolean;
 }
 
 const { 
@@ -15,11 +16,13 @@ const {
     description = "Grupo Espírita Paulo de Tarso (GEPT) - Casa Espírita em Uberlândia, MG. Estudo, prática e difusão do Espiritismo, com tratamento espiritual e atividades solidárias.",
     image = "/images/gept-logo-principal.png",
     hideCampaignBanner = false,
-    compactHeader = false
+    compactHeader = false,
+    appendSiteName = true
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url);
 const ogImageURL = new URL(image, Astro.site || Astro.url);
+const resolvedTitle = appendSiteName ? `${title} | Grupo Espírita Paulo de Tarso` : title;
 ---
 
 <!DOCTYPE html>
@@ -29,14 +32,14 @@ const ogImageURL = new URL(image, Astro.site || Astro.url);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content={description}>
     <meta name="facebook-domain-verification" content="2vrwhbkdwbarmxetvrqrokykgz3o0y" />
-    <title>{title} | Grupo Espírita Paulo de Tarso</title>
+    <title>{resolvedTitle}</title>
     
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph / Social -->
     <meta property="og:url" content={canonicalURL}>
-    <meta property="og:title" content={`${title} | Grupo Espírita Paulo de Tarso`}>
+    <meta property="og:title" content={resolvedTitle}>
     <meta property="og:description" content={description}>
     <meta property="og:image" content={ogImageURL}>
     <meta property="og:type" content="website">

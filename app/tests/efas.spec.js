@@ -6,6 +6,8 @@ test.describe('Landing page do EFAS', () => {
   test('exibe as informações essenciais e direciona para a inscrição', async ({ page }) => {
     await page.goto('/efas');
 
+    await expect(page).toHaveTitle('Encontro Fraterno Auta de Souza 2026 | Uberlândia');
+    await expect(page.locator('meta[property="og:title"]')).toHaveAttribute('content', 'Encontro Fraterno Auta de Souza 2026 | Uberlândia');
     await expect(page.getByText('Boas vindas ao Grupo Espírita Paulo de Tarso! Uberlândia/MG')).toHaveCount(0);
     await expect(page.getByText(/Inscrições abertas para os Cursos de Espiritismo/)).toHaveCount(0);
     expect(await page.locator('body > header').evaluate((element) => element.getBoundingClientRect().height)).toBeLessThanOrEqual(90);
