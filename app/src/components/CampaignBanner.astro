@@ -1,15 +1,15 @@
 ---
 ---
 
-<div id="campaign-banner" class="hidden bg-[#00334e] text-white py-2.5 px-4 relative z-50 shadow-md">
+<div id="campaign-banner" class="hidden bg-[#071a37] text-white py-2.5 px-4 relative z-50 shadow-md">
     <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-3 text-sm font-medium">
         <div class="flex items-center gap-2">
-            <span class="inline-block w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-            <span id="campaign-banner-text">Inscrições abertas para os Cursos de Espiritismo! Início dia 15 de agosto.</span>
+            <span class="inline-block w-2 h-2 rounded-full bg-[#f3c65d] animate-pulse"></span>
+            <span id="campaign-banner-text">EFAS 2026: inscrições abertas para o Encontro Fraterno Auta de Souza.</span>
         </div>
         <div class="flex items-center gap-3">
-            <a id="campaign-banner-cta" href="/cursos-espiritismo#inscricao" class="bg-cyan-500 hover:bg-cyan-400 text-[#002235] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition">
-                Saiba mais
+            <a id="campaign-banner-cta" href="/efas" class="bg-[#f3c65d] hover:bg-[#ffe09a] text-[#071a37] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition">
+                Conheça e inscreva-se
             </a>
             <button id="campaign-banner-close" class="text-gray-300 hover:text-white p-1 rounded-full hover:bg-white/10 transition" aria-label="Fechar aviso">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -56,6 +56,8 @@
                 const closeBtn = document.getElementById('campaign-banner-close');
 
                 if (bannerText) bannerText.textContent = bannerCampaign.content.text || '';
+                bannerContainer.style.backgroundColor = bannerCampaign.content.bgColor || '#071a37';
+                bannerContainer.style.color = bannerCampaign.content.textColor || '#ffffff';
                 if (bannerCta) {
                     bannerCta.textContent = bannerCampaign.content.ctaText || 'Saiba mais';
                     bannerCta.href = bannerCampaign.content.ctaLink || '#';

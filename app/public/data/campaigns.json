@@ -6,7 +6,7 @@
       "active": true,
       "type": "popup",
       "startDate": "2026-08-01T00:00:00-03:00",
-      "expirationDate": "2026-08-31T23:59:59-03:00",
+      "expirationDate": "2026-08-14T23:59:59-03:00",
       "targetPages": ["/"],
       "content": {
         "title": "Conheça o Espiritismo",
@@ -29,13 +29,47 @@
       "active": true,
       "type": "banner",
       "startDate": "2026-08-01T00:00:00-03:00",
-      "expirationDate": "2026-08-31T23:59:59-03:00",
+      "expirationDate": "2026-08-14T23:59:59-03:00",
       "targetPages": ["all"],
       "content": {
         "text": "Inscrições abertas para os Cursos de Espiritismo! Início dia 15 de agosto.",
         "ctaText": "Saiba mais",
         "ctaLink": "/cursos-espiritismo#inscricao",
         "bgColor": "#00334e",
+        "textColor": "#ffffff"
+      }
+    },
+    {
+      "id": "efas-2026-popup",
+      "title": "EFAS 2026 - Encontro Fraterno Auta de Souza",
+      "active": true,
+      "type": "popup",
+      "startDate": "2026-08-15T00:00:00-03:00",
+      "expirationDate": "2026-09-13T23:59:59-03:00",
+      "targetPages": ["/"],
+      "content": {
+        "eyebrow": "12 e 13 de setembro • Uberlândia/MG",
+        "title": "EFAS 2026",
+        "subtitle": "Encontro Fraterno Auta de Souza",
+        "ctaText": "Faça sua inscrição",
+        "ctaLink": "/efas",
+        "image": "/images/efas/efas-2026-cartaz.jpeg",
+        "imageAlt": "Cartaz oficial do EFAS 2026 em Uberlândia"
+      }
+    },
+    {
+      "id": "efas-2026-banner",
+      "title": "Banner Topo - EFAS 2026",
+      "active": true,
+      "type": "banner",
+      "startDate": "2026-08-15T00:00:00-03:00",
+      "expirationDate": "2026-09-13T23:59:59-03:00",
+      "targetPages": ["all"],
+      "content": {
+        "text": "EFAS 2026: inscrições abertas para o Encontro Fraterno Auta de Souza.",
+        "ctaText": "Conheça e inscreva-se",
+        "ctaLink": "/efas",
+        "bgColor": "#071a37",
         "textColor": "#ffffff"
       }
     }
