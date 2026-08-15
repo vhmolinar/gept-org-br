@@ -16,6 +16,8 @@ test.describe('Gerenciador de Campanhas e Pop-up/Banner', () => {
     await expect(page.locator('#popup-image')).toHaveAttribute('src', '/images/efas/efas-2026-cartaz.jpeg');
     await expect(page.locator('#popup-link')).toHaveAttribute('href', '/efas');
     await expect(page.locator('#popup-cta')).toContainText('Faça sua inscrição');
+    await expect(page.locator('#campaign-banner')).toBeVisible();
+    await expect(page.locator('#campaign-banner-text')).toContainText('EFAS 2026');
 
     // Clica no botão de fechar e verifica se oculta
     const closeBtn = page.locator('#popup-close');
