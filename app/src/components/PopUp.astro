@@ -5,7 +5,7 @@
     <div class="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity" id="popup-backdrop"></div>
     
     <!-- Modal Content -->
-    <div class="relative w-full max-w-md bg-[#00334e] shadow-2xl rounded-xl overflow-hidden transform scale-95 opacity-0 transition-all duration-300" id="popup-content">
+    <div class="relative w-full max-w-sm md:max-w-md bg-[#071a37] shadow-2xl rounded-3xl overflow-hidden transform scale-95 opacity-0 transition-all duration-300 border border-white/15" id="popup-content">
         
         <!-- Close Button (Clear) -->
         <button id="popup-close" class="absolute top-3 right-3 z-20 flex items-center gap-1 bg-black/50 hover:bg-black/80 text-white px-3 py-1.5 rounded-full text-sm font-bold backdrop-blur-md transition shadow-lg border border-white/10" aria-label="Fechar">
@@ -13,46 +13,21 @@
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
 
-        <!-- Clickable Banner Area -->
-        <a href="/cursos-espiritismo#inscricao" class="block relative w-full aspect-[4/5] bg-cover bg-center group" style="background-image: url('/images/popup-divulgacao-cursos-bg.jpg');">
-            <!-- Gradient Overlay (Dark blue to cyan to match the poster) -->
-            <div class="absolute inset-0 bg-gradient-to-t from-[#002235] via-[#004a63]/80 to-[#00334e]/70 group-hover:via-[#004a63]/70 transition-all duration-300"></div>
-            
-            <!-- Content -->
-            <div class="relative h-full flex flex-col justify-center p-8 md:p-10 text-center">
-                <!-- Top Question -->
-                <h2 class="text-xl md:text-2xl font-bold text-white leading-tight mb-8 drop-shadow-md opacity-90">
-                    De onde vim?<br>O que é a morte?<br>A reencarnação existe?
-                </h2>
-                
-                <!-- Main Banner Title -->
-                <div class="flex flex-col items-center mb-8">
-                    <h3 class="text-white text-4xl md:text-5xl font-black uppercase tracking-wider leading-none drop-shadow-lg mb-3">
-                        Conheça o<br>Espiritismo
-                    </h3>
-                    <div class="flex items-center gap-4 w-full justify-center">
-                        <div class="h-px bg-cyan-400/50 flex-grow"></div>
-                        <span class="text-cyan-200 text-xs md:text-sm font-bold tracking-widest uppercase">
-                            Curso Presencial e Gratuito
-                        </span>
-                        <div class="h-px bg-cyan-400/50 flex-grow"></div>
-                    </div>
-                </div>
-                
-                <!-- Details -->
-                <div class="mt-4 flex flex-col items-center gap-3">
-                    <div class="flex flex-col items-center gap-1 text-white font-medium bg-white/10 px-6 py-3 rounded-xl border border-white/20 backdrop-blur-sm">
-                        <div class="flex items-center gap-2 font-bold text-lg text-cyan-200">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
-                            <span>Início: 15 de agosto</span>
-                        </div>
-                        <div class="text-sm">Horário: 17h15 às 20h</div>
-                    </div>
-                    
-                    <div class="mt-4 inline-block bg-cyan-500 hover:bg-cyan-400 text-[#002235] px-8 py-3 rounded-full font-black text-sm uppercase tracking-wider shadow-[0_0_15px_rgba(6,182,212,0.5)] transition-transform transform group-hover:scale-105">
-                        CLIQUE AQUI E SE INSCREVA
-                    </div>
-                </div>
+        <!-- Clickable campaign area -->
+        <a id="popup-link" href="/efas" class="block group">
+            <div class="relative bg-[#0b2549]">
+                <img id="popup-image" src="/images/efas/efas-2026-cartaz.jpeg" alt="Cartaz oficial do EFAS 2026 em Uberlândia" class="w-full max-h-[58vh] object-contain bg-[#071a37]" />
+                <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#071a37]/80 to-transparent pointer-events-none"></div>
+            </div>
+
+            <div class="relative px-6 pb-6 pt-4 text-center text-white bg-[radial-gradient(circle_at_top,rgba(243,198,93,0.15),transparent_50%)]">
+                <p id="popup-eyebrow" class="text-[0.7rem] font-extrabold uppercase tracking-[0.16em] text-[#f3c65d]">12 e 13 de setembro • Uberlândia/MG</p>
+                <h2 id="popup-title" class="mt-2 text-2xl md:text-3xl font-black">EFAS 2026</h2>
+                <p id="popup-subtitle" class="mt-1 text-sm text-blue-100">Encontro Fraterno Auta de Souza</p>
+                <span id="popup-cta" class="mt-4 inline-flex items-center gap-2 rounded-full bg-[#f3c65d] px-7 py-3 text-sm font-black uppercase tracking-wider text-[#071a37] shadow-[0_10px_30px_rgba(243,198,93,0.25)] transition group-hover:-translate-y-0.5 group-hover:bg-[#ffe09a]">
+                    Faça sua inscrição
+                    <svg aria-hidden="true" class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-5-5l5 5-5 5" /></svg>
+                </span>
             </div>
         </a>
     </div>
@@ -96,6 +71,26 @@
             if (!validCampaign) {
                 return;
             }
+
+            const campaignContent = validCampaign.content || {};
+            const popupLink = document.getElementById('popup-link') as HTMLAnchorElement | null;
+            const popupImage = document.getElementById('popup-image') as HTMLImageElement | null;
+            const textFields: Record<string, string | undefined> = {
+                'popup-eyebrow': campaignContent.eyebrow,
+                'popup-title': campaignContent.title,
+                'popup-subtitle': campaignContent.subtitle,
+                'popup-cta': campaignContent.ctaText,
+            };
+
+            if (popupLink) popupLink.href = campaignContent.ctaLink || '#';
+            if (popupImage) {
+                popupImage.src = campaignContent.image || '/images/gept-logo-principal.png';
+                popupImage.alt = campaignContent.imageAlt || validCampaign.title || 'Campanha em destaque';
+            }
+            Object.entries(textFields).forEach(([id, value]) => {
+                const element = document.getElementById(id);
+                if (element && value) element.firstChild!.textContent = value;
+            });
         } catch (err) {
             console.error('Erro ao verificar validade da campanha de pop-up:', err);
             return;

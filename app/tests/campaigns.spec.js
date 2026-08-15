@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Gerenciador de Campanhas e Pop-up/Banner', () => {
 
-  test('deve carregar e exibir o pop-up de campanha vigente na Home Page', async ({ page }) => {
+  test('deve carregar o pop-up do EFAS e exibi-lo na Home Page', async ({ page }) => {
     // Acessa a Home Page onde a campanha tipo popup deve ser exibida
     await page.goto('/');
 
@@ -12,12 +12,20 @@ test.describe('Gerenciador de Campanhas e Pop-up/Banner', () => {
 
     // Verifica o título e elementos do pop-up
     await expect(page.locator('#popup-content')).toBeVisible();
-    await expect(page.locator('#popup-content')).toContainText(/conheça o\s*espiritismo/i);
+    await expect(page.locator('#popup-content')).toContainText('EFAS 2026');
+    await expect(page.locator('#popup-image')).toHaveAttribute('src', '/images/efas/efas-2026-cartaz.jpeg');
+    await expect(page.locator('#popup-link')).toHaveAttribute('href', '/efas');
+    await expect(page.locator('#popup-cta')).toContainText('Faça sua inscrição');
 
     // Clica no botão de fechar e verifica se oculta
     const closeBtn = page.locator('#popup-close');
     await closeBtn.click();
     await expect(popup).toBeHidden();
+
+    // O EFAS também deve ocupar a primeira posição do carrossel.
+    const efasSlide = page.getByTestId('efas-carousel-slide');
+    await expect(efasSlide).toHaveClass(/opacity-100/);
+    await expect(efasSlide.getByRole('link', { name: /Conheça o evento/ })).toHaveAttribute('href', '/efas');
   });
 
   test('não deve exibir o pop-up quando a campanha estiver expirada', async ({ page }) => {

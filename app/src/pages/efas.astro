@@ -1,0 +1,580 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const registrationUrl = 'https://autadesouza-online.web.app/#/evento/efas_2026_mg_uberlandia_1';
+const whatsappMauro = 'https://wa.me/5534991739867?text=Ol%C3%A1%2C%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20o%20EFAS%202026%20em%20Uberl%C3%A2ndia.';
+const whatsappGeni = 'https://wa.me/5534988073015?text=Ol%C3%A1%2C%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20o%20EFAS%202026%20em%20Uberl%C3%A2ndia.';
+
+const newDimensionsThemes = [
+    { name: 'Transtornos emocionais na infância', speaker: 'Jayne Nunes Morais', audience: 'Adultos' },
+    { name: 'Vencendo a depressão e a culpa em busca da felicidade', speaker: 'Lucas Gervásio', audience: 'Adultos' },
+    { name: 'Bets: o jogo que aprisiona. Uma abordagem médico-espírita', speaker: 'Gabriela Scalia', audience: 'Adultos' },
+    { name: 'Antes de você chegar: o lar cristão', speaker: 'Ala Mitchell', audience: 'Adultos' },
+    { name: 'A arte na família', speaker: 'Moacyr Camargo (SP)', audience: 'Adultos' },
+    { name: 'O que o Espiritismo tem a ensinar?', speaker: 'Leandro Abrahão', audience: 'Adultos' },
+    { name: 'Entre a aparência e a essência: a felicidade está à venda?', speaker: 'Instituto do Jovem', audience: 'Jovens de 12 a 16 anos' },
+    { name: 'Pornografia na visão espírita', speaker: 'Rodrigo Scalia', audience: 'Adultos' },
+];
+
+const spiritistCenterThemes = [
+    { name: 'A arte de contar histórias na Evangelização', speaker: 'Hélio e Nite', audience: 'Adultos' },
+    { name: 'O que é o Instituto da Caridade no Centro Espírita', speaker: 'Instituto da Caridade', audience: 'Adultos' },
+    { name: 'Núcleos de trabalho do Instituto do Esclarecimento e Família: como implantá-los', speaker: 'Geni, Mariana e Lucas Gervásio', audience: 'Adultos' },
+    { name: 'Ide e Curai — Magnetismo aplicado à cura', speaker: 'Célia e Diomar', audience: 'Adultos' },
+    { name: 'Divulgação do Espiritismo: a mensagem consoladora nas ruas', speaker: 'Instituto de Divulgação', audience: 'Adultos' },
+    { name: 'Como implantar uma mocidade no Centro Espírita', speaker: 'Instituto do Jovem', audience: 'Adultos' },
+    { name: 'O amor de Jesus de lar em lar por meio do Livro Espírita', speaker: 'Keliny e André Luis', audience: 'Adultos' },
+    { name: 'O amor de Jesus de lar em lar por meio da mensagem espírita', speaker: 'Comissão da CFAS', audience: 'Adultos' },
+    { name: 'Guardiões do Bem: o jovem na Casa Espírita — o jogo', speaker: 'Instituto do Jovem', audience: 'Jovens de 12 a 16 anos' },
+];
+
+const childrensCourses = [
+    { name: 'Amor à natureza', group: 'Berçário', audience: '0 a 1 ano e 11 meses' },
+    { name: 'Amor à natureza', group: 'Maternal', audience: '2 e 3 anos' },
+    { name: 'Amor à natureza', group: 'Jardim', audience: '4 e 5 anos' },
+    { name: 'Alegria de Viver', group: 'Nível 2', audience: '6 a 11 anos' },
+    { name: 'Vícios e Drogas, Não', group: 'Nível 2', audience: '6 a 11 anos' },
+    { name: 'Jesus e o Lar', group: 'Nível 2', audience: '6 a 11 anos' },
+    { name: 'Não Matarás', group: 'Nível 2', audience: '6 a 11 anos' },
+];
+
+const saturdaySchedule = [
+    { time: '10h00 – 13h00', title: 'Recepção e entrega das credenciais' },
+    { time: '11h30 – 12h50', title: 'Almoço' },
+    { time: '12h10 – 13h15', title: 'Alegria Cristã' },
+    { time: '13h15 – 13h30', title: 'Abertura do Encontro Fraterno e divisão das crianças e jovens' },
+    { time: '13h30 – 14h30', title: 'Palestra de abertura', featured: true },
+    { time: '14h30 – 14h40', title: 'Deslocamento para as salas' },
+    { time: '14h40 – 15h50', title: '1º Ciclo de Estudo — Novas Dimensões do Conhecimento', featured: true },
+    { time: '15h50 – 16h15', title: 'Intervalo' },
+    { time: '16h15 – 16h20', title: 'Deslocamento para as salas' },
+    { time: '16h20 – 17h40', title: '2º Ciclo de Estudo — Temas Vinculados ao Centro Espírita (1ª parte)', featured: true },
+    { time: '17h40 – 19h30', title: 'Banho e jantar' },
+    { time: '19h30 – 19h55', title: 'Alegria Cristã' },
+    { time: '19h55 – 20h00', title: 'Preparação para a prece' },
+    { time: '20h00 – 21h30', title: 'Apresentação artística — show com Moacyr Camargo', featured: true },
+    { time: '21h30 – 21h40', title: 'Avisos e prece final' },
+    { time: '21h40 – 22h30', title: 'Confraternização — Roda da Alegria' },
+];
+
+const sundaySchedule = [
+    { time: '07h30 – 08h20', title: 'Café da manhã, Alegria Cristã e prece inicial' },
+    { time: '08h20 – 08h30', title: 'Deslocamento para o tratamento' },
+    { time: '08h30 – 09h00', title: 'Tratamento Espiritual e Alegria Cristã', featured: true },
+    { time: '09h00 – 09h40', title: '3º Ciclo de Estudo — Temas Vinculados ao Centro Espírita (2ª parte e conclusão)', featured: true },
+    { time: '09h40 – 09h50', title: 'Preparação para as práticas' },
+    { time: '09h50 – 10h00', title: 'Deslocamento para as práticas' },
+    { time: '10h00 – 11h00', title: 'Práticas assistenciais', featured: true },
+    { time: '11h00 – 11h15', title: 'Retorno das práticas assistenciais' },
+    { time: '11h15 – 12h15', title: 'Momento coletivo — apresentação dos alunos do CEEB e CCFC (violino, ukulele e flauta) e encerramento', featured: true },
+    { time: '12h15', title: 'Almoço de confraternização' },
+];
+
+const externalIcon = `
+    <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5h5m0 0v5m0-5L10 14M5 7v12h12v-5" />
+    </svg>
+`;
+---
+
+<Layout
+    title="EFAS 2026 — Encontro Fraterno Auta de Souza"
+    description="Participe do 5895º Encontro Fraterno Auta de Souza em Uberlândia, nos dias 12 e 13 de setembro de 2026. Inscrições abertas para adultos e crianças."
+    image="/images/efas/efas-2026-cartaz.jpeg"
+    hideCampaignBanner
+    compactHeader
+>
+    <div class="efas-page overflow-hidden bg-[#fffaf0]">
+        <!-- Hero -->
+        <section class="relative isolate bg-[#071a37] text-white">
+            <div class="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_72%_18%,rgba(246,196,83,0.25),transparent_29%),radial-gradient(circle_at_18%_80%,rgba(46,112,190,0.35),transparent_34%),linear-gradient(135deg,#06152e_0%,#0c2d5b_55%,#071a37_100%)]"></div>
+            <div class="absolute inset-0 -z-10 opacity-20 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.7)_1px,transparent_1px)] bg-[size:28px_28px]"></div>
+            <div class="absolute top-0 right-0 w-[36rem] h-[36rem] rounded-full border border-white/10 translate-x-1/3 -translate-y-1/2"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14 md:py-20 lg:py-24 grid lg:grid-cols-[1.1fr_0.72fr] gap-12 lg:gap-16 items-center">
+                <div class="relative z-10 text-center lg:text-left">
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-3 mb-7">
+                        <span class="inline-flex items-center gap-2 rounded-full border border-[#f3c65d]/40 bg-[#f3c65d]/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.16em] text-[#ffe5a5]">
+                            5895º Encontro Fraterno
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-4 py-2 text-sm font-semibold text-blue-100">
+                            Uberlândia • MG
+                        </span>
+                    </div>
+
+                    <p class="mb-3 text-sm md:text-base font-bold uppercase tracking-[0.22em] text-[#f3c65d]">Encontro Fraterno Auta de Souza</p>
+                    <h1 class="max-w-4xl mx-auto lg:mx-0 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.98] tracking-tight">
+                        “Amai-vos uns aos outros
+                        <span class="block mt-2 text-[#f8d982]">como eu vos amei”</span>
+                    </h1>
+                    <p class="mt-4 text-blue-100/80 font-medium">Jesus • João 13:34</p>
+
+                    <p class="mt-7 max-w-2xl mx-auto lg:mx-0 text-lg md:text-xl text-blue-50/90 leading-relaxed">
+                        Dois dias de estudo, convivência e fraternidade para toda a família. Uma oportunidade de fortalecer vínculos, renovar propósitos e viver o Evangelho em comunidade.
+                    </p>
+
+                    <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                        <a
+                            href={registrationUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-[#f3c65d] px-7 py-4 text-base font-extrabold text-[#071a37] shadow-[0_16px_40px_rgba(243,198,93,0.28)] transition hover:-translate-y-1 hover:bg-[#ffe09a] focus:outline-none focus:ring-4 focus:ring-[#f3c65d]/40"
+                            data-testid="efas-hero-cta"
+                        >
+                            Faça sua inscrição
+                            <Fragment set:html={externalIcon} />
+                            <span class="sr-only">(abre em uma nova aba)</span>
+                        </a>
+                        <a href="#informacoes" class="inline-flex min-h-14 items-center justify-center rounded-full border border-white/25 bg-white/8 px-7 py-4 font-bold text-white backdrop-blur-sm transition hover:bg-white/15">
+                            Veja os detalhes
+                        </a>
+                    </div>
+                    <p class="mt-4 text-sm text-blue-100/75">Inscrição: R$ 20 adulto • R$ 10 criança</p>
+
+                    <div class="mt-10 grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto lg:mx-0 text-left">
+                        <div class="flex gap-4 rounded-2xl border border-white/12 bg-white/8 p-4 backdrop-blur-sm">
+                            <svg aria-hidden="true" class="w-7 h-7 shrink-0 text-[#f3c65d]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 7V3m8 4V3M5 11h14M5 5h14v15H5z" /></svg>
+                            <div><strong class="block text-white">12 e 13 de setembro</strong><span class="text-sm text-blue-100/75">Recepção sábado, a partir das 10h</span></div>
+                        </div>
+                        <div class="flex gap-4 rounded-2xl border border-white/12 bg-white/8 p-4 backdrop-blur-sm">
+                            <svg aria-hidden="true" class="w-7 h-7 shrink-0 text-[#f3c65d]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21s7-4.2 7-11a7 7 0 10-14 0c0 6.8 7 11 7 11z" /><circle cx="12" cy="10" r="2.2" /></svg>
+                            <div><strong class="block text-white">Pacaembu, Uberlândia</strong><span class="text-sm text-blue-100/75">Centro Educacional Eurípedes Barsanulfo</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative mx-auto w-full max-w-[29rem] lg:max-w-none">
+                    <div class="absolute -inset-4 md:-inset-6 rounded-[2rem] bg-gradient-to-br from-[#f3c65d]/25 via-white/5 to-blue-400/20 blur-2xl"></div>
+                    <figure class="relative rotate-[1.5deg] overflow-hidden rounded-[1.75rem] border border-white/20 bg-white p-2.5 shadow-2xl shadow-black/40 transition duration-500 hover:rotate-0">
+                        <img
+                            src="/images/efas/efas-2026-cartaz.jpeg"
+                            alt="Cartaz oficial do EFAS 2026 em Uberlândia"
+                            class="w-full rounded-[1.25rem] object-cover"
+                            width="1130"
+                            height="1600"
+                            fetchpriority="high"
+                        />
+                    </figure>
+                </div>
+            </div>
+
+            <div class="h-8 md:h-12 bg-[#fffaf0] [clip-path:polygon(0_65%,100%_0,100%_100%,0_100%)]"></div>
+        </section>
+
+        <!-- Quick benefits -->
+        <section aria-label="Informações rápidas" class="relative z-10 -mt-1 px-4 sm:px-6 pb-20">
+            <div class="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="rounded-2xl border border-[#e8ddc7] bg-white p-5 shadow-sm">
+                    <div class="text-sm font-bold uppercase tracking-wider text-[#a87916]">Para todos</div>
+                    <p class="mt-2 text-gray-700">Evento aberto, sem restrições.</p>
+                </div>
+                <div class="rounded-2xl border border-[#e8ddc7] bg-white p-5 shadow-sm">
+                    <div class="text-sm font-bold uppercase tracking-wider text-[#a87916]">Alimentação</div>
+                    <p class="mt-2 text-gray-700">Quatro refeições incluídas.</p>
+                </div>
+                <div class="rounded-2xl border border-[#e8ddc7] bg-white p-5 shadow-sm">
+                    <div class="text-sm font-bold uppercase tracking-wider text-[#a87916]">Hospedagem</div>
+                    <p class="mt-2 text-gray-700">Alojamento incluído no local.</p>
+                </div>
+                <div class="rounded-2xl border border-[#e8ddc7] bg-white p-5 shadow-sm">
+                    <div class="text-sm font-bold uppercase tracking-wider text-[#a87916]">Acessibilidade</div>
+                    <p class="mt-2 text-gray-700">Todos os ambientes acessíveis.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="px-4 sm:px-6 pb-24 md:pb-32">
+            <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="relative min-h-[29rem] sm:min-h-[34rem]">
+                    <img src="/images/efas/efas-confraternizacao.jpeg" alt="Participantes reunidos em uma atividade fraterna do EFAS" class="absolute top-0 left-0 w-[84%] h-[58%] object-cover rounded-[2rem] shadow-xl" loading="lazy" />
+                    <img src="/images/efas/efas-integracao.jpeg" alt="Adultos e crianças em uma dinâmica de integração" class="absolute bottom-0 right-0 w-[66%] h-[55%] object-cover rounded-[2rem] border-[8px] border-[#fffaf0] shadow-2xl" loading="lazy" />
+                    <div class="absolute top-[49%] left-3 sm:left-7 rounded-2xl bg-[#f3c65d] px-5 py-4 text-[#071a37] shadow-xl">
+                        <strong class="block text-3xl font-bold">2 dias</strong>
+                        <span class="text-sm font-semibold">para viver em fraternidade</span>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-[#a87916]">Sobre o encontro</p>
+                    <h2 class="mt-3 text-3xl md:text-5xl font-bold leading-tight text-[#0b2549]">O que é o EFAS?</h2>
+                    <p class="mt-6 text-lg leading-relaxed text-gray-700">
+                        O Encontro Fraterno Auta de Souza é um encontro espírita dedicado à troca de experiências, ao estudo da Doutrina Espírita e ao trabalho no campo do bem.
+                    </p>
+                    <p class="mt-4 text-lg leading-relaxed text-gray-700">
+                        Durante o fim de semana, crianças e adultos compartilham momentos de aprendizado, convivência e alegria. É um convite para sair da rotina, encontrar pessoas e renovar, juntos, o compromisso com o amor ao próximo.
+                    </p>
+
+                    <div class="mt-8 rounded-3xl border border-[#ead8ad] bg-[#fff5d9] p-6">
+                        <blockquote class="text-xl md:text-2xl font-semibold italic leading-relaxed text-[#0b2549]">
+                            “Amai-vos uns aos outros como eu vos amei.”
+                        </blockquote>
+                        <p class="mt-2 text-sm font-bold uppercase tracking-wider text-[#8d681b]">Tema central • João 13:34</p>
+                    </div>
+
+                    <a href={registrationUrl} target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center gap-2 font-extrabold text-[#174f91] underline decoration-[#f3c65d] decoration-4 underline-offset-8 transition hover:text-[#0b2549]">
+                        Quero participar do EFAS 2026
+                        <Fragment set:html={externalIcon} />
+                        <span class="sr-only">(abre em uma nova aba)</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Audience and children -->
+        <section class="bg-white px-4 sm:px-6 py-24 md:py-28">
+            <div class="max-w-6xl mx-auto">
+                <div class="max-w-3xl mx-auto text-center">
+                    <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-[#a87916]">Um encontro para todos</p>
+                    <h2 class="mt-3 text-3xl md:text-5xl font-bold text-[#0b2549]">Você e sua família são bem-vindos</h2>
+                    <p class="mt-5 text-lg leading-relaxed text-gray-600">Não é preciso ter experiência anterior ou participar de um centro espírita. Basta chegar com o coração aberto para aprender, conviver e compartilhar.</p>
+                </div>
+
+                <div class="mt-14 grid md:grid-cols-3 gap-6">
+                    <article class="rounded-3xl border border-gray-100 bg-[#f8fbff] p-7 shadow-sm hover-card">
+                        <div class="w-12 h-12 rounded-2xl bg-[#dfeeff] text-[#174f91] flex items-center justify-center">
+                            <svg aria-hidden="true" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2m7-10a4 4 0 100-8 4 4 0 000 8zm13 10v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" /></svg>
+                        </div>
+                        <h3 class="mt-5 text-xl font-bold text-[#0b2549]">Adultos e famílias</h3>
+                        <p class="mt-3 leading-relaxed text-gray-600">Espaço de acolhimento, estudo e integração para participantes de todas as trajetórias.</p>
+                    </article>
+                    <article class="rounded-3xl border border-gray-100 bg-[#fffaf0] p-7 shadow-sm hover-card">
+                        <div class="w-12 h-12 rounded-2xl bg-[#ffebad] text-[#8d681b] flex items-center justify-center">
+                            <svg aria-hidden="true" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="mt-5 text-xl font-bold text-[#0b2549]">Participação aberta</h3>
+                        <p class="mt-3 leading-relaxed text-gray-600">O EFAS é aberto ao público, sem restrições e sem exigência de conhecimento prévio.</p>
+                    </article>
+                    <article class="rounded-3xl border border-gray-100 bg-[#f7f1ff] p-7 shadow-sm hover-card">
+                        <div class="w-12 h-12 rounded-2xl bg-[#eadcff] text-[#68419b] flex items-center justify-center">
+                            <svg aria-hidden="true" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21a9 9 0 100-18 9 9 0 000 18zm0-13v4l2.5 2.5" /></svg>
+                        </div>
+                        <h3 class="mt-5 text-xl font-bold text-[#0b2549]">Crianças no Encontrinho</h3>
+                        <p class="mt-3 leading-relaxed text-gray-600">Comida, música, atividades e apresentações preparadas especialmente para o público infantil.</p>
+                    </article>
+                </div>
+
+                <div class="mt-8 grid lg:grid-cols-[0.85fr_1.15fr] overflow-hidden rounded-[2rem] bg-[#0b2549] text-white shadow-xl">
+                    <img src="/images/efas/efas-encontrinho.jpeg" alt="Crianças e responsáveis reunidos em atividade do Encontrinho" class="h-full min-h-72 w-full object-cover" loading="lazy" />
+                    <div class="p-8 md:p-12 flex flex-col justify-center">
+                        <span class="text-sm font-extrabold uppercase tracking-[0.2em] text-[#f3c65d]">Para os pequenos</span>
+                        <h3 class="mt-3 text-3xl font-bold">Encontrinho</h3>
+                        <p class="mt-4 text-lg leading-relaxed text-blue-100">Enquanto os adultos participam da programação, as crianças contam com atividades próprias, pensadas para sua linguagem e faixa etária.</p>
+                        <p class="mt-5 flex gap-3 rounded-2xl border border-white/15 bg-white/8 p-4 text-sm text-blue-50">
+                            <svg aria-hidden="true" class="w-6 h-6 shrink-0 text-[#f3c65d]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v4m0 4h.01M10.3 3.8L2.4 17.5A2 2 0 004.1 20h15.8a2 2 0 001.7-3L13.7 3.8a2 2 0 00-3.4 0z" /></svg>
+                            As crianças devem estar acompanhadas pelos pais ou responsáveis legais durante o evento.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses catalog -->
+        <section id="cursos-efas" class="px-4 sm:px-6 py-24 md:py-28 bg-[#fffaf0]">
+            <div class="max-w-6xl mx-auto">
+                <div class="max-w-3xl">
+                    <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-[#a87916]">Conteúdo do encontro</p>
+                    <h2 class="mt-3 text-3xl md:text-5xl font-bold text-[#0b2549]">Cursos oferecidos no EFAS</h2>
+                    <p class="mt-5 text-lg leading-relaxed text-gray-600">Conheça os temas que serão trabalhados nos ciclos de estudo para adultos, jovens e crianças durante o evento.</p>
+                    <p class="mt-4 inline-flex items-center gap-2 rounded-full bg-[#fff0bf] px-4 py-2 text-sm font-bold text-[#76591d]">
+                        <svg aria-hidden="true" class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12H9m3-3v6m9-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        Abra os blocos abaixo para ver todos os temas e expositores.
+                    </p>
+                </div>
+
+                <div class="mt-12 space-y-5">
+                    <details class="group overflow-hidden rounded-[2rem] border border-[#e7dbc4] bg-white shadow-sm">
+                        <summary class="flex cursor-pointer list-none flex-col items-start justify-between gap-6 p-7 sm:flex-row sm:items-center md:p-9 [&::-webkit-details-marker]:hidden">
+                            <div>
+                                <div class="flex flex-wrap items-center gap-3">
+                                    <span class="rounded-full bg-[#e7f1ff] px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-[#174f91]">8 temas</span>
+                                    <span class="text-sm font-semibold text-gray-500">Adultos e jovens</span>
+                                </div>
+                                <h3 class="mt-3 text-2xl md:text-3xl font-bold text-[#0b2549]">Novas Dimensões do Conhecimento</h3>
+                                <p class="mt-2 text-sm md:text-base font-semibold text-[#8d681b]">Sábado • 14h40 às 15h50</p>
+                            </div>
+                            <span class="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#f4ead6] px-4 py-3 text-sm font-extrabold text-[#0b2549] transition group-hover:bg-[#ead9b8]">
+                                <span class="group-open:hidden">Ver temas e expositores</span>
+                                <span class="hidden group-open:inline">Ocultar temas</span>
+                                <svg aria-hidden="true" class="h-5 w-5 transition group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14m-7-7h14" /></svg>
+                            </span>
+                        </summary>
+                        <div class="border-t border-[#eee5d5] px-7 pb-8 pt-3 md:px-9 md:pb-10">
+                            <ol class="divide-y divide-gray-100">
+                                {newDimensionsThemes.map((theme, index) => (
+                                    <li class="grid md:grid-cols-[2.25rem_1fr_auto] gap-3 md:gap-5 py-5 items-start">
+                                        <span class="flex h-9 w-9 items-center justify-center rounded-full bg-[#f8f1e5] text-sm font-extrabold text-[#8d681b]">{index + 1}</span>
+                                        <div>
+                                            <h4 class="font-bold leading-snug text-[#0b2549]">{theme.name}</h4>
+                                            <p class="mt-1 text-sm text-gray-500">{theme.speaker}</p>
+                                        </div>
+                                        <span class:list={["w-fit rounded-full px-3 py-1 text-xs font-bold", theme.audience.startsWith('Jovens') ? 'bg-[#f0e7ff] text-[#68419b]' : 'bg-gray-100 text-gray-600']}>{theme.audience}</span>
+                                    </li>
+                                ))}
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group overflow-hidden rounded-[2rem] border border-[#e7dbc4] bg-white shadow-sm">
+                        <summary class="flex cursor-pointer list-none flex-col items-start justify-between gap-6 p-7 sm:flex-row sm:items-center md:p-9 [&::-webkit-details-marker]:hidden">
+                            <div>
+                                <div class="flex flex-wrap items-center gap-3">
+                                    <span class="rounded-full bg-[#e7f1ff] px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-[#174f91]">9 temas</span>
+                                    <span class="text-sm font-semibold text-gray-500">Adultos e jovens</span>
+                                </div>
+                                <h3 class="mt-3 text-2xl md:text-3xl font-bold text-[#0b2549]">Temas Vinculados ao Centro Espírita</h3>
+                                <p class="mt-2 text-sm md:text-base font-semibold text-[#8d681b]">Sábado • 16h20 às 17h40 &nbsp;|&nbsp; Domingo • 9h00 às 9h40</p>
+                            </div>
+                            <span class="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#f4ead6] px-4 py-3 text-sm font-extrabold text-[#0b2549] transition group-hover:bg-[#ead9b8]">
+                                <span class="group-open:hidden">Ver temas e expositores</span>
+                                <span class="hidden group-open:inline">Ocultar temas</span>
+                                <svg aria-hidden="true" class="h-5 w-5 transition group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14m-7-7h14" /></svg>
+                            </span>
+                        </summary>
+                        <div class="border-t border-[#eee5d5] px-7 pb-8 pt-3 md:px-9 md:pb-10">
+                            <ol class="divide-y divide-gray-100">
+                                {spiritistCenterThemes.map((theme, index) => (
+                                    <li class="grid md:grid-cols-[2.25rem_1fr_auto] gap-3 md:gap-5 py-5 items-start">
+                                        <span class="flex h-9 w-9 items-center justify-center rounded-full bg-[#f8f1e5] text-sm font-extrabold text-[#8d681b]">{index + 1}</span>
+                                        <div>
+                                            <h4 class="font-bold leading-snug text-[#0b2549]">{theme.name}</h4>
+                                            <p class="mt-1 text-sm text-gray-500">{theme.speaker}</p>
+                                        </div>
+                                        <span class:list={["w-fit rounded-full px-3 py-1 text-xs font-bold", theme.audience.startsWith('Jovens') ? 'bg-[#f0e7ff] text-[#68419b]' : 'bg-gray-100 text-gray-600']}>{theme.audience}</span>
+                                    </li>
+                                ))}
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group overflow-hidden rounded-[2rem] border border-[#e7dbc4] bg-white shadow-sm">
+                        <summary class="flex cursor-pointer list-none flex-col items-start justify-between gap-6 p-7 sm:flex-row sm:items-center md:p-9 [&::-webkit-details-marker]:hidden">
+                            <div>
+                                <div class="flex flex-wrap items-center gap-3">
+                                    <span class="rounded-full bg-[#fff0bf] px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-[#7a5b17]">7 turmas e temas</span>
+                                    <span class="text-sm font-semibold text-gray-500">Crianças de 0 a 11 anos</span>
+                                </div>
+                                <h3 class="mt-3 text-2xl md:text-3xl font-bold text-[#0b2549]">Cursos do Encontrinho</h3>
+                                <p class="mt-2 text-sm md:text-base font-semibold text-[#8d681b]">Atividades organizadas por faixa etária</p>
+                            </div>
+                            <span class="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#f4ead6] px-4 py-3 text-sm font-extrabold text-[#0b2549] transition group-hover:bg-[#ead9b8]">
+                                <span class="group-open:hidden">Ver turmas e faixas etárias</span>
+                                <span class="hidden group-open:inline">Ocultar turmas</span>
+                                <svg aria-hidden="true" class="h-5 w-5 transition group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14m-7-7h14" /></svg>
+                            </span>
+                        </summary>
+                        <div class="border-t border-[#eee5d5] px-7 pb-8 pt-3 md:px-9 md:pb-10">
+                            <div class="mb-4 rounded-2xl bg-[#fff8e4] p-4 text-sm text-[#76591d]"><strong>Nível 1 • 0 a 5 anos:</strong> todas as turmas trabalham o tema geral “Amor à natureza”.</div>
+                            <ol class="divide-y divide-gray-100">
+                                {childrensCourses.map((course, index) => (
+                                    <li class="grid sm:grid-cols-[2.25rem_1fr_auto] gap-3 md:gap-5 py-5 items-start">
+                                        <span class="flex h-9 w-9 items-center justify-center rounded-full bg-[#fff0bf] text-sm font-extrabold text-[#7a5b17]">{index + 1}</span>
+                                        <div>
+                                            <h4 class="font-bold leading-snug text-[#0b2549]">{course.name}</h4>
+                                            <p class="mt-1 text-sm text-gray-500">{course.group}</p>
+                                        </div>
+                                        <span class="w-fit rounded-full bg-[#f0e7ff] px-3 py-1 text-xs font-bold text-[#68419b]">{course.audience}</span>
+                                    </li>
+                                ))}
+                            </ol>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practical info -->
+        <section id="informacoes" class="relative bg-[#071a37] px-4 sm:px-6 py-24 md:py-28 text-white scroll-mt-32">
+            <div class="absolute inset-0 opacity-15 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.7)_1px,transparent_1px)] bg-[size:28px_28px]"></div>
+            <div class="relative max-w-6xl mx-auto">
+                <div class="max-w-3xl">
+                    <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-[#f3c65d]">Planeje sua participação</p>
+                    <h2 class="mt-3 text-3xl md:text-5xl font-bold">Informações práticas</h2>
+                    <p class="mt-5 text-lg text-blue-100/80">Tudo o que você precisa saber para viver o fim de semana com tranquilidade.</p>
+                </div>
+
+                <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <article class="rounded-3xl border border-white/12 bg-white/8 p-7 backdrop-blur-sm">
+                        <span class="text-xs font-extrabold uppercase tracking-wider text-[#f3c65d]">Quando</span>
+                        <h3 class="mt-3 text-2xl font-bold">12 e 13 de setembro</h3>
+                        <p class="mt-3 text-blue-100/75 leading-relaxed">A recepção e a entrega das credenciais começam no sábado, dia 12, às 10h.</p>
+                    </article>
+                    <article class="rounded-3xl border border-white/12 bg-white/8 p-7 backdrop-blur-sm">
+                        <span class="text-xs font-extrabold uppercase tracking-wider text-[#f3c65d]">Onde</span>
+                        <h3 class="mt-3 text-xl font-bold">Centro Educacional Eurípedes Barsanulfo</h3>
+                        <p class="mt-3 text-blue-100/75 leading-relaxed">Rua Abília Ferreira Diniz, 105<br />Pacaembu • Uberlândia/MG</p>
+                    </article>
+                    <article class="rounded-3xl border border-white/12 bg-white/8 p-7 backdrop-blur-sm">
+                        <span class="text-xs font-extrabold uppercase tracking-wider text-[#f3c65d]">Investimento</span>
+                        <div class="mt-3 flex gap-8">
+                            <div><strong class="block text-3xl font-bold">R$ 20</strong><span class="text-sm text-blue-100/70">adulto</span></div>
+                            <div><strong class="block text-3xl font-bold">R$ 10</strong><span class="text-sm text-blue-100/70">criança</span></div>
+                        </div>
+                    </article>
+                    <article class="rounded-3xl border border-white/12 bg-white/8 p-7 backdrop-blur-sm">
+                        <span class="text-xs font-extrabold uppercase tracking-wider text-[#f3c65d]">Refeições incluídas</span>
+                        <h3 class="mt-3 text-xl font-bold">Alimentação durante o evento</h3>
+                        <ul class="mt-4 space-y-2 text-blue-100/80">
+                            <li><strong class="text-white">Sábado:</strong> almoço e jantar</li>
+                            <li><strong class="text-white">Domingo:</strong> café da manhã e almoço</li>
+                        </ul>
+                    </article>
+                    <article class="rounded-3xl border border-white/12 bg-white/8 p-7 backdrop-blur-sm">
+                        <span class="text-xs font-extrabold uppercase tracking-wider text-[#f3c65d]">Hospedagem incluída</span>
+                        <h3 class="mt-3 text-xl font-bold">Prepare seus pertences</h3>
+                        <p class="mt-3 text-blue-100/75 leading-relaxed">O alojamento está incluído. Leve roupa de cama, travesseiro, cobertor, toalha e itens pessoais de banho e higiene.</p>
+                    </article>
+                    <article class="rounded-3xl border border-white/12 bg-white/8 p-7 backdrop-blur-sm">
+                        <span class="text-xs font-extrabold uppercase tracking-wider text-[#f3c65d]">Acessibilidade</span>
+                        <h3 class="mt-3 text-xl font-bold">Ambientes acessíveis</h3>
+                        <p class="mt-3 text-blue-100/75 leading-relaxed">Banheiros, salas e refeitórios possuem acessibilidade para receber todos com conforto.</p>
+                    </article>
+                </div>
+
+                <div class="mt-10 text-center">
+                    <a href={registrationUrl} target="_blank" rel="noopener noreferrer" class="inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-[#f3c65d] px-8 py-4 font-extrabold text-[#071a37] shadow-xl transition hover:-translate-y-1 hover:bg-[#ffe09a]">
+                        Faça sua inscrição
+                        <Fragment set:html={externalIcon} />
+                        <span class="sr-only">(abre em uma nova aba)</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule -->
+        <section id="programacao" class="px-4 sm:px-6 py-24 md:py-28 bg-[#fffaf0]">
+            <div class="max-w-6xl mx-auto">
+                <div class="max-w-3xl">
+                    <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-[#a87916]">12 e 13 de setembro</p>
+                    <h2 class="mt-3 text-3xl md:text-5xl font-bold text-[#0b2549]">Programação completa</h2>
+                    <p class="mt-5 text-lg leading-relaxed text-gray-600">Confira os horários dos estudos, momentos de convivência, refeições e atividades do encontro.</p>
+                </div>
+
+                <div class="mt-12 grid lg:grid-cols-2 gap-7 items-start">
+                    <article class="overflow-hidden rounded-[2rem] border border-[#e8ddc7] bg-white shadow-sm">
+                        <header class="relative overflow-hidden bg-[#0b2549] p-7 md:p-8 text-white">
+                            <div class="absolute right-4 top-1 text-[6rem] font-bold leading-none text-white/8">12</div>
+                            <p class="text-sm font-extrabold uppercase tracking-widest text-[#f3c65d]">12 de setembro</p>
+                            <h3 class="mt-2 text-3xl font-bold">Sábado</h3>
+                            <p class="mt-2 text-blue-100/75">Recepção a partir das 10h</p>
+                        </header>
+                        <div class="p-6 md:p-8">
+                            <ol class="relative border-l-2 border-[#eadfca] ml-2">
+                                {saturdaySchedule.map((item) => (
+                                    <li class="relative pl-6 pb-6 last:pb-0">
+                                        <span class:list={["absolute -left-[0.46rem] top-1.5 h-3 w-3 rounded-full ring-4 ring-white", item.featured ? 'bg-[#d69a13]' : 'bg-[#a9b8ca]']}></span>
+                                        <time class:list={["block text-sm font-extrabold", item.featured ? 'text-[#9a6d0e]' : 'text-[#174f91]']}>{item.time}</time>
+                                        <p class:list={["mt-1 leading-relaxed", item.featured ? 'font-bold text-[#0b2549]' : 'text-gray-600']}>{item.title}</p>
+                                    </li>
+                                ))}
+                            </ol>
+                        </div>
+                    </article>
+
+                    <article class="overflow-hidden rounded-[2rem] border border-[#e8ddc7] bg-white shadow-sm">
+                        <header class="relative overflow-hidden bg-[#174f91] p-7 md:p-8 text-white">
+                            <div class="absolute right-4 top-1 text-[6rem] font-bold leading-none text-white/8">13</div>
+                            <p class="text-sm font-extrabold uppercase tracking-widest text-[#ffe09a]">13 de setembro</p>
+                            <h3 class="mt-2 text-3xl font-bold">Domingo</h3>
+                            <p class="mt-2 text-blue-100/80">Atividades a partir das 7h30</p>
+                        </header>
+                        <div class="p-6 md:p-8">
+                            <ol class="relative border-l-2 border-[#dce6f2] ml-2">
+                                {sundaySchedule.map((item) => (
+                                    <li class="relative pl-6 pb-6 last:pb-0">
+                                        <span class:list={["absolute -left-[0.46rem] top-1.5 h-3 w-3 rounded-full ring-4 ring-white", item.featured ? 'bg-[#d69a13]' : 'bg-[#a9b8ca]']}></span>
+                                        <time class:list={["block text-sm font-extrabold", item.featured ? 'text-[#9a6d0e]' : 'text-[#174f91]']}>{item.time}</time>
+                                        <p class:list={["mt-1 leading-relaxed", item.featured ? 'font-bold text-[#0b2549]' : 'text-gray-600']}>{item.title}</p>
+                                    </li>
+                                ))}
+                            </ol>
+                        </div>
+                    </article>
+                </div>
+
+                <p class="mt-6 text-center text-sm text-gray-500">A programação poderá receber ajustes da organização até a data do evento.</p>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="bg-white px-4 sm:px-6 py-24 md:py-28">
+            <div class="max-w-6xl mx-auto">
+                <div class="max-w-3xl">
+                    <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-[#a87916]">Memórias que inspiram</p>
+                    <h2 class="mt-3 text-3xl md:text-5xl font-bold text-[#0b2549]">Fraternidade vivida de perto</h2>
+                    <p class="mt-5 text-lg text-gray-600">Estudo, serviço, música, brincadeiras e encontros que permanecem conosco muito depois do fim de semana.</p>
+                </div>
+
+                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 auto-rows-[11rem] md:auto-rows-[14rem] gap-3 md:gap-4">
+                    <figure class="col-span-2 row-span-2 overflow-hidden rounded-3xl"><img src="/images/efas/efas-equipe.jpeg" alt="Equipe reunida em uma edição do EFAS" class="h-full w-full object-cover transition duration-500 hover:scale-105" loading="lazy" /></figure>
+                    <figure class="overflow-hidden rounded-3xl"><img src="/images/efas/efas-estudo.jpeg" alt="Momento de estudo durante o encontro" class="h-full w-full object-cover transition duration-500 hover:scale-105" loading="lazy" /></figure>
+                    <figure class="overflow-hidden rounded-3xl"><img src="/images/efas/efas-atividade-fraterna.jpeg" alt="Participantes em atividade fraterna" class="h-full w-full object-cover transition duration-500 hover:scale-105" loading="lazy" /></figure>
+                    <figure class="col-span-2 overflow-hidden rounded-3xl"><img src="/images/efas/efas-oficina.jpeg" alt="Oficina em grupo durante o EFAS" class="h-full w-full object-cover transition duration-500 hover:scale-105" loading="lazy" /></figure>
+                    <figure class="col-span-2 overflow-hidden rounded-3xl"><img src="/images/efas/efas-roda-conversa.jpeg" alt="Roda de conversa entre participantes" class="h-full w-full object-cover transition duration-500 hover:scale-105" loading="lazy" /></figure>
+                    <figure class="col-span-2 overflow-hidden rounded-3xl"><img src="/images/efas/efas-integracao.jpeg" alt="Dinâmica de integração com adultos e crianças" class="h-full w-full object-cover transition duration-500 hover:scale-105" loading="lazy" /></figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="px-4 sm:px-6 py-20 bg-[#f2eadb]">
+            <div class="max-w-6xl mx-auto grid lg:grid-cols-[0.8fr_1.2fr] gap-8 items-center">
+                <div>
+                    <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-[#a87916]">Precisa de ajuda?</p>
+                    <h2 class="mt-3 text-3xl md:text-4xl font-bold text-[#0b2549]">Fale com a organização</h2>
+                    <p class="mt-4 text-gray-600 leading-relaxed">Nossa equipe pode ajudar com dúvidas sobre participação, hospedagem, alimentação ou inscrição.</p>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <a href={whatsappMauro} target="_blank" rel="noopener noreferrer" class="group rounded-3xl bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                        <span class="text-sm font-bold uppercase tracking-wider text-[#2b8a54]">WhatsApp</span>
+                        <strong class="mt-2 block text-2xl text-[#0b2549]">Mauro</strong>
+                        <span class="mt-1 block text-gray-600">(34) 99173-9867</span>
+                        <span class="mt-5 inline-flex items-center gap-2 font-bold text-[#174f91]">Enviar mensagem <Fragment set:html={externalIcon} /></span>
+                        <span class="sr-only">(abre em uma nova aba)</span>
+                    </a>
+                    <a href={whatsappGeni} target="_blank" rel="noopener noreferrer" class="group rounded-3xl bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                        <span class="text-sm font-bold uppercase tracking-wider text-[#2b8a54]">WhatsApp</span>
+                        <strong class="mt-2 block text-2xl text-[#0b2549]">Geni</strong>
+                        <span class="mt-1 block text-gray-600">(34) 98807-3015</span>
+                        <span class="mt-5 inline-flex items-center gap-2 font-bold text-[#174f91]">Enviar mensagem <Fragment set:html={externalIcon} /></span>
+                        <span class="sr-only">(abre em uma nova aba)</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="relative isolate px-4 sm:px-6 py-24 md:py-32 bg-[#071a37] text-white text-center">
+            <div class="absolute inset-0 -z-10 opacity-30 bg-[radial-gradient(circle_at_50%_20%,rgba(243,198,93,0.45),transparent_28%),radial-gradient(circle_at_center,rgba(255,255,255,0.6)_1px,transparent_1px)] bg-[size:auto,28px_28px]"></div>
+            <div class="max-w-4xl mx-auto">
+                <p class="text-sm font-extrabold uppercase tracking-[0.22em] text-[#f3c65d]">12 e 13 de setembro de 2026</p>
+                <h2 class="mt-4 text-4xl md:text-6xl font-bold leading-tight">Venha viver este encontro conosco</h2>
+                <p class="mt-6 text-lg md:text-xl leading-relaxed text-blue-100/85">Reserve este fim de semana para aprender, conviver e renovar seus caminhos em fraternidade.</p>
+                <a href={registrationUrl} target="_blank" rel="noopener noreferrer" class="mt-9 inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-[#f3c65d] px-9 py-4 text-lg font-extrabold text-[#071a37] shadow-[0_16px_40px_rgba(243,198,93,0.28)] transition hover:-translate-y-1 hover:bg-[#ffe09a]" data-testid="efas-final-cta">
+                    Faça sua inscrição
+                    <Fragment set:html={externalIcon} />
+                    <span class="sr-only">(abre em uma nova aba)</span>
+                </a>
+                <p class="mt-4 text-sm text-blue-100/65">Você será direcionado ao sistema Auta de Souza Online.</p>
+            </div>
+        </section>
+    </div>
+</Layout>
+
+<style>
+    .efas-page {
+        --efas-navy: #071a37;
+        --efas-gold: #f3c65d;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .efas-page *,
+        .efas-page *::before,
+        .efas-page *::after {
+            scroll-behavior: auto !important;
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+</style>
