@@ -17,15 +17,15 @@ const newDimensionsThemes = [
 ];
 
 const spiritistCenterThemes = [
-    { name: 'A arte de contar histórias na Evangelização', speaker: 'Hélio e Nite', audience: 'Adultos' },
-    { name: 'O que é o Instituto da Caridade no Centro Espírita', speaker: 'Instituto da Caridade', audience: 'Adultos' },
-    { name: 'Núcleos de trabalho do Instituto do Esclarecimento e Família: como implantá-los', speaker: 'Geni, Mariana e Lucas Gervásio', audience: 'Adultos' },
-    { name: 'Ide e Curai — Magnetismo aplicado à cura', speaker: 'Célia e Diomar', audience: 'Adultos' },
-    { name: 'Divulgação do Espiritismo: a mensagem consoladora nas ruas', speaker: 'Instituto de Divulgação', audience: 'Adultos' },
-    { name: 'Como implantar uma mocidade no Centro Espírita', speaker: 'Instituto do Jovem', audience: 'Adultos' },
-    { name: 'O amor de Jesus de lar em lar por meio do Livro Espírita', speaker: 'Keliny e André Luis', audience: 'Adultos' },
-    { name: 'O amor de Jesus de lar em lar por meio da mensagem espírita', speaker: 'Comissão da CFAS', audience: 'Adultos' },
-    { name: 'Guardiões do Bem: o jovem na Casa Espírita — o jogo', speaker: 'Instituto do Jovem', audience: 'Jovens de 12 a 16 anos' },
+    { name: 'A arte de contar histórias na Evangelização', audience: 'Adultos' },
+    { name: 'O que é o Instituto da Caridade no Centro Espírita', audience: 'Adultos' },
+    { name: 'Núcleos de trabalho do Instituto do Esclarecimento e Família: como implantá-los', audience: 'Adultos' },
+    { name: 'Ide e Curai — Magnetismo aplicado à cura', audience: 'Adultos' },
+    { name: 'Divulgação do Espiritismo: a mensagem consoladora nas ruas', audience: 'Adultos' },
+    { name: 'Como implantar uma mocidade no Centro Espírita', audience: 'Adultos' },
+    { name: 'O amor de Jesus de lar em lar por meio do Livro Espírita', audience: 'Adultos' },
+    { name: 'O amor de Jesus de lar em lar por meio da mensagem espírita', audience: 'Adultos' },
+    { name: 'Guardiões do Bem: o jovem na Casa Espírita — o jogo', audience: 'Jovens de 12 a 16 anos' },
 ];
 
 const childrensCourses = [
@@ -279,7 +279,7 @@ const externalIcon = `
                     <p class="mt-5 text-lg leading-relaxed text-gray-600">Conheça os temas que serão trabalhados nos ciclos de estudo para adultos, jovens e crianças durante o evento.</p>
                     <p class="mt-4 inline-flex items-center gap-2 rounded-full bg-[#fff0bf] px-4 py-2 text-sm font-bold text-[#76591d]">
                         <svg aria-hidden="true" class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12H9m3-3v6m9-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        Abra os blocos abaixo para ver todos os temas e expositores.
+                        Abra os blocos abaixo para consultar todos os temas.
                     </p>
                 </div>
 
@@ -327,7 +327,7 @@ const externalIcon = `
                                 <p class="mt-2 text-sm md:text-base font-semibold text-[#8d681b]">Sábado • 16h20 às 17h40 &nbsp;|&nbsp; Domingo • 9h00 às 9h40</p>
                             </div>
                             <span class="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#f4ead6] px-4 py-3 text-sm font-extrabold text-[#0b2549] transition group-hover:bg-[#ead9b8]">
-                                <span class="group-open:hidden">Ver temas e expositores</span>
+                                <span class="group-open:hidden">Ver temas</span>
                                 <span class="hidden group-open:inline">Ocultar temas</span>
                                 <svg aria-hidden="true" class="h-5 w-5 transition group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14m-7-7h14" /></svg>
                             </span>
@@ -339,7 +339,6 @@ const externalIcon = `
                                         <span class="flex h-9 w-9 items-center justify-center rounded-full bg-[#f8f1e5] text-sm font-extrabold text-[#8d681b]">{index + 1}</span>
                                         <div>
                                             <h4 class="font-bold leading-snug text-[#0b2549]">{theme.name}</h4>
-                                            <p class="mt-1 text-sm text-gray-500">{theme.speaker}</p>
                                         </div>
                                         <span class:list={["w-fit rounded-full px-3 py-1 text-xs font-bold", theme.audience.startsWith('Jovens') ? 'bg-[#f0e7ff] text-[#68419b]' : 'bg-gray-100 text-gray-600']}>{theme.audience}</span>
                                     </li>

@@ -20,6 +20,11 @@ test.describe('Landing page do EFAS', () => {
     await page.getByText('Ver temas e expositores', { exact: true }).first().click();
     await expect(page.getByText('Ocultar temas', { exact: true }).first()).toBeVisible();
     await expect(page.getByText('Vencendo a depressão e a culpa em busca da felicidade')).toBeVisible();
+    await expect(page.getByText('Lucas Gervásio', { exact: true })).toBeVisible();
+    await page.getByText('Ver temas', { exact: true }).click();
+    await expect(page.getByText('A arte de contar histórias na Evangelização')).toBeVisible();
+    await expect(page.getByText('Hélio e Nite', { exact: true })).toHaveCount(0);
+    await expect(page.getByText('Geni, Mariana e Lucas Gervásio', { exact: true })).toHaveCount(0);
     await expect(page.getByRole('heading', { name: 'Programação completa' })).toBeVisible();
     await expect(page.getByText('Apresentação artística — show com Moacyr Camargo')).toBeVisible();
     await expect(page.getByText('Almoço de confraternização')).toBeVisible();
