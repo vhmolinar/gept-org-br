@@ -17,13 +17,19 @@ test.describe('Landing page do EFAS', () => {
     await expect(page.getByText('R$ 10', { exact: true })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Encontrinho', exact: true })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Cursos oferecidos no EFAS' })).toBeVisible();
-    await page.getByText('Ver temas e expositores', { exact: true }).first().click();
+    const courseGroups = page.locator('#cursos-efas details');
+    const newDimensionsGroup = courseGroups.filter({ hasText: 'Novas Dimensões do Conhecimento' });
+    const spiritistCenterGroup = courseGroups.filter({ hasText: 'Temas Vinculados ao Centro Espírita' });
+
+    await newDimensionsGroup.getByText('Ver temas e expositores', { exact: true }).click();
     await expect(page.getByText('Ocultar temas', { exact: true }).first()).toBeVisible();
+    await expect(newDimensionsGroup.locator('ol li').first()).toContainText('A arte de contar histórias na Evangelização');
+    await expect(newDimensionsGroup.locator('ol li').first()).toContainText('Nite e Hélio Lima');
     await expect(page.getByText('Vencendo a depressão e a culpa em busca da felicidade')).toBeVisible();
     await expect(page.getByText('Lucas Gervásio', { exact: true })).toBeVisible();
-    await page.getByText('Ver temas', { exact: true }).click();
-    await expect(page.getByText('A arte de contar histórias na Evangelização')).toBeVisible();
-    await expect(page.getByText('Hélio e Nite', { exact: true })).toHaveCount(0);
+    await spiritistCenterGroup.getByText('Ver temas', { exact: true }).click();
+    await expect(spiritistCenterGroup.locator('ol li').first()).toContainText('Como evangelizar criança de 0 a 11 anos');
+    await expect(spiritistCenterGroup.getByText('A arte de contar histórias na Evangelização')).toHaveCount(0);
     await expect(page.getByText('Geni, Mariana e Lucas Gervásio', { exact: true })).toHaveCount(0);
     await expect(page.getByRole('heading', { name: 'Programação completa' })).toBeVisible();
     await expect(page.getByText('Apresentação artística — show com Moacyr Camargo')).toBeVisible();
